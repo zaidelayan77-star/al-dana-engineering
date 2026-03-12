@@ -1,28 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiAward, FiUsers, FiTarget, FiTool, FiClock } from 'react-icons/fi';
 
 export default function WhyChooseUsSection() {
+    const { t } = useTranslation();
+
     const reasons = [
         {
             icon: <FiAward className="w-8 h-8 text-[#E9B10C]" />,
-            title: "ISO/IEC 17025 Accredited Laboratory"
+            title: t('why_choose_us.items.iso')
         },
         {
             icon: <FiUsers className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Experienced Engineering Team"
+            title: t('why_choose_us.items.team')
         },
         {
             icon: <FiTarget className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Accurate & Reliable Test Results"
+            title: t('why_choose_us.items.results')
         },
         {
             icon: <FiTool className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Modern Equipment & Calibration"
+            title: t('why_choose_us.items.equip')
         },
         {
             icon: <FiClock className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Fast Reporting & Technical Support"
+            title: t('why_choose_us.items.reporting')
         }
     ];
 
@@ -57,10 +60,10 @@ export default function WhyChooseUsSection() {
                     className="text-center mb-16"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        WHY CHOOSE US
+                        {t('why_choose_us.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Built on Trust & Precision
+                        {t('why_choose_us.title')}
                     </h2>
                     <div className="w-16 h-1 bg-[#E9B10C] mx-auto rounded-full"></div>
                 </motion.div>
@@ -92,4 +95,4 @@ export default function WhyChooseUsSection() {
             </div>
         </section>
     );
-}
+}

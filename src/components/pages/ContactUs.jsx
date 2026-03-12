@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import HeroPages from '../shared/HeroPages';
 import ContactInformationSection from '../sections/ContactInformationSection';
 import OurLocationSection from '../sections/OurLocationSection';
@@ -8,13 +9,15 @@ import ContactOurTeamSection from '../sections/ContactOurTeamSection';
 import coverImg from '../../assets/images/1 (3).jpg';
 
 const ContactUs = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="w-full">
             <HeroPages
                 image={coverImg}
-                subtitle="GET IN TOUCH"
-                title="CONTACT US"
-                description="Let's Discuss Your Project Requirements"
+                subtitle={t('pages.contact.subtitle')}
+                title={t('pages.contact.title')}
+                description={t('pages.contact.description')}
             />
             <ContactInformationSection />
             <ContactUsForm />

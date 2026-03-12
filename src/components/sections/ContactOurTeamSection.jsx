@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 export default function ContactOurTeamSection() {
+    const { t } = useTranslation();
+
     return (
         <section className="py-20 bg-[#F4D03F]">
             <div className="max-w-4xl mx-auto px-4 text-center">
@@ -13,7 +16,7 @@ export default function ContactOurTeamSection() {
                     transition={{ duration: 0.6 }}
                     className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 tracking-tight"
                 >
-                    Ready to Start Your Project?
+                    {t('contact_team.title')}
                 </motion.h2>
 
                 <motion.p
@@ -23,7 +26,7 @@ export default function ContactOurTeamSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-[#1a1a1a]/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed"
                 >
-                    Our engineering experts are ready to support you with accurate testing and reliable analysis.
+                    {t('contact_team.desc')}
                 </motion.p>
 
                 <motion.div
@@ -36,7 +39,7 @@ export default function ContactOurTeamSection() {
                         to="/contact-us"
                         className="inline-block bg-[#1a1a1a] text-white font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-md hover:bg-black hover:scale-105 transition-all duration-300 shadow-lg"
                     >
-                        Contact Our Team Today
+                        {t('contact_team.button')}
                     </Link>
                 </motion.div>
             </div>

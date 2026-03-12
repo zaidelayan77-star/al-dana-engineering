@@ -1,39 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiFolder, FiMapPin, FiLayers, FiUser, FiBriefcase } from 'react-icons/fi';
 import { FaVials } from 'react-icons/fa';
 
 export default function ProjectInformationSection() {
+    const { t } = useTranslation();
+
     const details = [
         {
             icon: <FiFolder className="w-6 h-6 text-[#E9B10C]" />,
-            label: "PROJECT NAME",
-            value: "Geotechnical Investigation — Al Reem Island Tower"
+            label: t('project_info.fields.project_name.label'),
+            value: t('project_info.fields.project_name.value')
         },
         {
             icon: <FiBriefcase className="w-6 h-6 text-[#E9B10C]" />,
-            label: "CLIENT NAME",
-            value: "Aldar Properties PJSC"
+            label: t('project_info.fields.client_name.label'),
+            value: t('project_info.fields.client_name.value')
         },
         {
             icon: <FiMapPin className="w-6 h-6 text-[#E9B10C]" />,
-            label: "LOCATION",
-            value: "Al Reem Island, Abu Dhabi, UAE"
+            label: t('project_info.fields.location.label'),
+            value: t('project_info.fields.location.value')
         },
         {
             icon: <FiLayers className="w-6 h-6 text-[#E9B10C]" />,
-            label: "BOREHOLE DEPTH",
-            value: "30m (6 Boreholes)"
+            label: t('project_info.fields.borehole_depth.label'),
+            value: t('project_info.fields.borehole_depth.value')
         },
         {
             icon: <FaVials className="w-6 h-6 text-[#E9B10C]" />,
-            label: "NUMBER OF SAMPLES",
-            value: "48 Disturbed + 18 Undisturbed"
+            label: t('project_info.fields.num_samples.label'),
+            value: t('project_info.fields.num_samples.value')
         },
         {
             icon: <FiUser className="w-6 h-6 text-[#E9B10C]" />,
-            label: "PROJECT ENGINEER",
-            value: "Eng. Ahmed Al Mansoori"
+            label: t('project_info.fields.project_engineer.label'),
+            value: t('project_info.fields.project_engineer.value')
         }
     ];
 
@@ -51,10 +54,10 @@ export default function ProjectInformationSection() {
                         className="mb-10"
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                            PROJECT INFORMATION
+                            {t('project_info.label')}
                         </h3>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Project Details
+                            {t('project_info.title')}
                         </h2>
                     </motion.div>
 
@@ -71,8 +74,8 @@ export default function ProjectInformationSection() {
                                 <div className="bg-[#FFF9E5] p-3 rounded-lg flex-shrink-0">
                                     {item.icon}
                                 </div>
-                                <div>
-                                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
+                                <div className="space-y-1">
+                                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">
                                         {item.label}
                                     </h4>
                                     <p className="text-gray-900 font-bold text-sm md:text-base leading-snug">
@@ -94,10 +97,10 @@ export default function ProjectInformationSection() {
                         className="mb-10"
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                            PROJECT OVERVIEW
+                            {t('project_info.overview.label')}
                         </h3>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Investigation Summary
+                            {t('project_info.overview.title')}
                         </h2>
                     </motion.div>
 
@@ -110,13 +113,13 @@ export default function ProjectInformationSection() {
                     >
                         <div className="text-gray-600 space-y-6 leading-relaxed text-lg">
                             <p>
-                                This investigation project evaluates subsurface soil conditions to support foundation design and construction safety requirements for the proposed high-rise tower development on Al Reem Island, Abu Dhabi.
+                                {t('project_info.overview.p1')}
                             </p>
                             <p>
-                                The scope of work includes rotary borehole drilling to depths of 30 meters, Standard Penetration Testing (SPT) at regular intervals, collection of disturbed and undisturbed soil samples, and groundwater level measurements. Laboratory testing encompasses soil classification, particle size analysis, Atterberg limits, moisture content determination, and chemical analysis including sulphate, chloride, and pH testing of soil and groundwater samples.
+                                {t('project_info.overview.p2')}
                             </p>
                             <p>
-                                All field and laboratory operations are conducted in accordance with BS, ASTM, and relevant international standards. The final geotechnical investigation report will provide engineering recommendations for foundation design, bearing capacity assessment, and settlement analysis to ensure safe and reliable construction outcomes.
+                                {t('project_info.overview.p3')}
                             </p>
                         </div>
                     </motion.div>

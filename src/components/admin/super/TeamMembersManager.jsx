@@ -64,9 +64,9 @@ export default function TeamMembersManager() {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
-                                    className="group relative bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center p-0 h-80"
+                                    className="group relative bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center p-0 h-auto"
                                 >
-                                    <div className="w-full h-48 bg-gray-50 overflow-hidden">
+                                    {/* <div className="w-full h-48 bg-gray-50 overflow-hidden">
                                         {member.image ? (
                                             <img
                                                 src={getMediaUrl(member.image)}
@@ -78,7 +78,7 @@ export default function TeamMembersManager() {
                                                 <FiUsers className="w-16 h-16 opacity-20" />
                                             </div>
                                         )}
-                                    </div>
+                                    </div> */}
 
                                     <div className="p-4 w-full flex flex-col items-center">
                                         <h3 className="text-gray-900 font-bold text-base text-center line-clamp-1 group-hover:text-[#E9B10C] transition-colors">

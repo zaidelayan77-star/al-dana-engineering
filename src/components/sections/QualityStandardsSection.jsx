@@ -1,26 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FaAward, FaLeaf, FaHardHat } from 'react-icons/fa';
 
 export default function QualityStandardsSection() {
+    const { t } = useTranslation();
+
     const standards = [
         {
             icon: <FaAward className="w-10 h-10 text-white" />,
             code: "ISO 9001:2015",
-            title: "Quality Management System",
-            description: "Ensures consistency in our services and reinforces our commitment to customer satisfaction through effective quality management."
+            title: t('quality_standards.items.qms.title'),
+            description: t('quality_standards.items.qms.desc')
         },
         {
             icon: <FaLeaf className="w-10 h-10 text-white" />,
             code: "ISO 14001:2015",
-            title: "Environmental Management",
-            description: "Demonstrates our dedication to sustainable practices and reducing environmental impact across all our projects."
+            title: t('quality_standards.items.ems.title'),
+            description: t('quality_standards.items.ems.desc')
         },
         {
             icon: <FaHardHat className="w-10 h-10 text-white" />,
             code: "ISO 45001:2018",
-            title: "Occupational Health & Safety",
-            description: "Prioritizes the safety and well-being of our workforce, ensuring a secure and hazard-free working environment."
+            title: t('quality_standards.items.ohs.title'),
+            description: t('quality_standards.items.ohs.desc')
         }
     ];
 
@@ -35,10 +38,10 @@ export default function QualityStandardsSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                            INTERNATIONAL STANDARDS
+                            {t('quality_standards.label')}
                         </h3>
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 font-primary">
-                            Accredited Systems
+                            {t('quality_standards.title')}
                         </h2>
                     </motion.div>
                 </div>

@@ -1,51 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiCheck, FiMoreHorizontal, FiFileText, FiTool, FiDatabase } from 'react-icons/fi';
 import { FaFlask } from 'react-icons/fa';
 
 export default function ProjectWorkflow() {
+    const { t } = useTranslation();
+
     const stages = [
         {
             id: 1,
-            title: "Project Approval & Mobilization",
-            description: "Client request review, documentation approval, and scheduling of investigation activities according to project requirements and UAE authority regulations.",
-            status: "Completed",
+            title: t('project_workflow.stages.s1.title'),
+            description: t('project_workflow.stages.s1.desc'),
+            status: 'Completed',
             icon: <FiCheck />,
-            statusLabel: "Approved"
+            statusLabel: t('project_workflow.stages.s1.label')
         },
         {
             id: 2,
-            title: "Engineering Team Preparation",
-            description: "Allocation of geologists, drilling operators, and field technicians. Equipment inspection and site planning prior to mobilization.",
-            status: "Completed",
+            title: t('project_workflow.stages.s2.title'),
+            description: t('project_workflow.stages.s2.desc'),
+            status: 'Completed',
             icon: <FiCheck />,
-            statusLabel: "Ready for Field Work"
+            statusLabel: t('project_workflow.stages.s2.label')
         },
         {
             id: 3,
-            title: "Field Investigation & Sample Collection",
-            description: "Rotary drilling operations, Standard Penetration Testing (SPT), soil and rock sampling, and groundwater measurements conducted at site locations.",
-            status: "Completed",
+            title: t('project_workflow.stages.s3.title'),
+            description: t('project_workflow.stages.s3.desc'),
+            status: 'Completed',
             icon: <FiCheck />,
-            statusLabel: "Samples Collected"
+            statusLabel: t('project_workflow.stages.s3.label')
         },
         {
             id: 4,
-            title: "Laboratory Testing & Analysis",
-            description: "Samples transferred to the laboratory for geotechnical and chemical testing including soil classification, moisture content, sulphate and chloride analysis, and rock strength testing.",
-            status: "In Progress",
+            title: t('project_workflow.stages.s4.title'),
+            description: t('project_workflow.stages.s4.desc'),
+            status: 'In Progress',
             icon: <FaFlask />,
-            statusLabel: "In Progress",
+            statusLabel: t('project_workflow.stages.s4.label'),
             isProgress: true,
             progress: 65
         },
         {
             id: 5,
-            title: "Engineering Reporting & Certified Results",
-            description: "Preparation of certified geotechnical investigation reports and engineering analysis in accordance with international testing standards. Estimated reporting period may extend up to several weeks depending on laboratory analysis requirements.",
-            status: "Pending",
+            title: t('project_workflow.stages.s5.title'),
+            description: t('project_workflow.stages.s5.desc'),
+            status: 'Pending',
             icon: <FiFileText />,
-            statusLabel: "Pending"
+            statusLabel: t('project_workflow.stages.s5.label')
         }
     ];
 
@@ -58,11 +61,12 @@ export default function ProjectWorkflow() {
         }
     };
 
-    const getLineColor = (status) => {
+    const getTranslatedStatus = (status) => {
         switch (status) {
-            case 'Completed': return 'bg-[#10B981]';
-            case 'In Progress': return 'bg-[#FFD700]';
-            default: return 'bg-gray-200';
+            case 'Completed': return t('project_workflow.status.completed');
+            case 'In Progress': return t('project_workflow.status.in_progress');
+            case 'Pending': return t('project_workflow.status.pending');
+            default: return status;
         }
     };
 
@@ -72,13 +76,13 @@ export default function ProjectWorkflow() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3 text-center">
-                        PROJECT WORKFLOW
+                        {t('project_workflow.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight text-center">
-                        5-Stage Engineering Progress
+                        {t('project_workflow.title')}
                     </h2>
                     <p className="text-gray-500 text-center max-w-2xl mx-auto">
-                        Track your project through each critical phase of our accredited soil investigation and laboratory testing process.
+                        {t('project_workflow.desc')}
                     </p>
                 </div>
 
@@ -96,10 +100,10 @@ export default function ProjectWorkflow() {
                             )}
 
                             <div className={`w-12 h-12 flex items-center justify-center rounded-lg mb-2 text-xl font-bold transition-all duration-300 ${getStatusColor(stage.status)}`}>
-                                {stage.status === 'Completed' ? <FiCheck /> : (stage.status === 'In Progress' ? stage.id : stage.id)}
+                                {stage.status === 'Completed' ? <FiCheck /> : stage.id}
                             </div>
                             <span className={`text-xs font-semibold ${stage.status === 'Completed' ? 'text-[#10B981]' : (stage.status === 'In Progress' ? 'text-[#FFD700]' : 'text-gray-400')}`}>
-                                {stage.status}
+                                {getTranslatedStatus(stage.status)}
                             </span>
                         </div>
                     ))}
@@ -133,7 +137,7 @@ export default function ProjectWorkflow() {
                             <div className="flex-grow pt-1">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                                     <div>
-                                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 block">STAGE {stage.id}</span>
+                                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 block">{t('project_workflow.stage')} {stage.id}</span>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{stage.title}</h3>
                                     </div>
                                     <div className={`mt-2 md:mt-0 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide inline-flex items-center gap-2 w-fit ${stage.status === 'Completed' ? 'bg-[#E6F8F2] text-[#10B981]' :
@@ -154,7 +158,7 @@ export default function ProjectWorkflow() {
                                 {stage.isProgress && (
                                     <div className="max-w-xl">
                                         <div className="flex justify-between text-xs font-bold text-[#FFD700] mb-2">
-                                            <span>Lab Testing Progress</span>
+                                            <span>{t('project_workflow.lab_progress')}</span>
                                             <span>{stage.progress}%</span>
                                         </div>
                                         <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
@@ -172,4 +176,4 @@ export default function ProjectWorkflow() {
             </div>
         </section>
     );
-}
+}

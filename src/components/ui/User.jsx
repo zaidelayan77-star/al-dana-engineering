@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function User() {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     // Check if token exists to determine auth state
     const token = localStorage.getItem('auth_token');
@@ -27,7 +29,7 @@ export default function User() {
     const handleLogout = () => {
         localStorage.clear();
         setIsOpen(false);
-        toast.success("Logged out successfully");
+        toast.success(t('user_menu.logged_out_success'));
     };
 
     return (
@@ -43,7 +45,7 @@ export default function User() {
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5 transition-all duration-200 ease-out transform origin-top-right">
+                <div className="absolute ltr:right-0 rtl:left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5 transition-all duration-200 ease-out transform origin-top-right">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                         {isAuthenticated ? (
                             <>
@@ -53,14 +55,14 @@ export default function User() {
                                     role="menuitem"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    My Profile
+                                    {t('user_menu.my_profile')}
                                 </Link>
                                 <button
                                     onClick={handleLogout}
-                                    className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 hover:text-red-700 transition-colors border-t border-gray-100 mt-1 pt-2"
+                                    className="block w-full ltr:text-left rtl:text-right px-4 py-2 text-sm text-red-600 hover:bg-gray-100 hover:text-red-700 transition-colors border-t border-gray-100 mt-1 pt-2"
                                     role="menuitem"
                                 >
-                                    Logout
+                                    {t('user_menu.logout')}
                                 </button>
                             </>
                         ) : (
@@ -71,7 +73,7 @@ export default function User() {
                                     role="menuitem"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    Login
+                                    {t('user_menu.login')}
                                 </Link>
                                 <Link
                                     to="/auth/register"
@@ -79,7 +81,7 @@ export default function User() {
                                     role="menuitem"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    Create Account
+                                    {t('user_menu.create_account')}
                                 </Link>
                             </>
                         )}
@@ -88,4 +90,4 @@ export default function User() {
             )}
         </div>
     );
-}
+}

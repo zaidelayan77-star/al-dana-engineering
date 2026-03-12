@@ -1,25 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function OurTrackRecord() {
+    const { t } = useTranslation();
+    
     const stats = [
         {
             value: "1996",
-            prefix: "Since",
-            label: "YEARS OF EXPERIENCE",
+            prefix: "",
+            label: t('track_record.stats.established'),
             isSpecial: true
         },
         {
             value: "4000+",
-            label: "PROJECTS COMPLETED"
+            label: t('track_record.stats.projects')
         },
         {
-            value: "ISO 17,025",
-            label: "ISO/IEC ACCREDITED"
+            value: "ISO 17025",
+            label: t('track_record.stats.accredited')
         },
         {
             value: "30+",
-            label: "ENGINEERS & TECHNICIANS"
+            label: t('track_record.stats.employees')
         }
     ];
 
@@ -37,9 +40,8 @@ export default function OurTrackRecord() {
                         className="flex items-center justify-center space-x-4 mb-4"
                     >
                         <div className="h-px w-12 bg-[#E9B10C]"></div>
-                        <span className="text-[#666666] font-bold text-xs tracking-[0.2em] uppercase"> {/* keeping text-gray-500 equivalent color for dark bg, maybe a bit lighter */}
-                            {/* Wait, on dark bg, gray text needs to be lighter. The screenshot has it quite dark but legible. Let's try lighter gray */}
-                            <span className="text-gray-400">OUR TRACK RECORD</span>
+                        <span className="text-[#666666] font-bold text-xs tracking-[0.2em] uppercase">
+                            <span className="text-gray-400">{t('track_record.label')}</span>
                         </span>
                         <div className="h-px w-12 bg-[#E9B10C]"></div>
                     </motion.div>
@@ -51,7 +53,7 @@ export default function OurTrackRecord() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-3xl md:text-5xl font-bold text-white font-primary"
                     >
-                        Experience & Achievements
+                        {t('track_record.title')}
                     </motion.h2>
                 </div>
 
@@ -77,7 +79,7 @@ export default function OurTrackRecord() {
                                 </span>
                             </div>
 
-                            <div className="h-0.5 w-12 bg-gray-700 mb-4 mx-auto"></div> {/* Optional divider line, matching style generally seen but not explicit in shot, removing if not needed. Screenshot doesn't clearly show a line but spacing is clear. */}
+                            <div className="h-0.5 w-12 bg-gray-700 mb-4 mx-auto"></div>
 
                             <p className="text-gray-400 text-sm font-bold tracking-[0.1em] uppercase">
                                 {stat.label}
@@ -89,4 +91,4 @@ export default function OurTrackRecord() {
             </div>
         </section>
     );
-}
+}

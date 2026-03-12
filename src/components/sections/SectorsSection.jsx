@@ -1,32 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FaLandmark, FaBuilding, FaGasPump, FaShieldAlt, FaIndustry, FaGlobeAmericas } from 'react-icons/fa';
 
 export default function SectorsSection() {
+    const { t } = useTranslation();
+
     const sectors = [
         {
             icon: <FaLandmark className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Infrastructure Projects"
+            title: t('sectors.items.infra')
         },
         {
             icon: <FaBuilding className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Building Construction"
+            title: t('sectors.items.building')
         },
         {
             icon: <FaGasPump className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Oil & Gas Industry"
+            title: t('sectors.items.oil_gas')
         },
         {
             icon: <FaShieldAlt className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Government Projects"
+            title: t('sectors.items.gov')
         },
         {
             icon: <FaIndustry className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Industrial Developments"
+            title: t('sectors.items.industrial')
         },
         {
             icon: <FaGlobeAmericas className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Geophysical Services"
+            title: t('sectors.items.geophysical')
         }
     ];
 
@@ -61,10 +64,10 @@ export default function SectorsSection() {
                     className="text-center mb-16"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        SECTORS
+                        {t('sectors.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Industries We Serve
+                        {t('sectors.title')}
                     </h2>
                     <div className="w-16 h-1 bg-[#E9B10C] mx-auto rounded-full"></div>
                 </motion.div>
@@ -96,4 +99,4 @@ export default function SectorsSection() {
             </div>
         </section>
     );
-}
+}

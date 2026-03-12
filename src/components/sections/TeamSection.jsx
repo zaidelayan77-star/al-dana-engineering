@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useGetTeamMembers } from '../../hooks/useTeamMembers';
-import { FiChevronRight, FiBriefcase } from 'react-icons/fi';
+import { FiChevronRight, FiBriefcase, FiUsers } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 export default function TeamSection({ limit = 4, showHeader = true, isFullPage = false }) {
+    const { t } = useTranslation();
     const { data: members, isLoading } = useGetTeamMembers();
 
     const getMediaUrl = (path) => {
@@ -33,17 +35,17 @@ export default function TeamSection({ limit = 4, showHeader = true, isFullPage =
                             className="max-w-2xl"
                         >
                             <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3 text-shadow-sm">
-                                OUR EXPERTS
+                                {t('team_section.label')}
                             </h3>
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-primary text-shadow-sm">
-                                Meet Our Dedicated Team
+                                {t('team_section.title')}
                             </h2>
                             <p className="text-gray-500 text-lg leading-relaxed font-light">
-                                Our strength lies in our people. From senior engineers to field technicians, our team is dedicated to precision and engineering excellence.
+                                {t('team_section.desc')}
                             </p>
                         </motion.div>
 
-                        {!isFullPage && members.length > limit && (
+                        {!isFullPage && members && members.length > limit && (
                             <motion.div
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +56,7 @@ export default function TeamSection({ limit = 4, showHeader = true, isFullPage =
                                     to="/team"
                                     className="inline-flex items-center space-x-2 text-[#E9B10C] font-bold hover:text-[#c4950a] transition-all group border-b-2 border-[#E9B10C] pb-1"
                                 >
-                                    <span>View All Team Members</span>
+                                    <span>{t('team_section.view_all')}</span>
                                     <FiChevronRight className="transform group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </motion.div>
@@ -72,37 +74,16 @@ export default function TeamSection({ limit = 4, showHeader = true, isFullPage =
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="group"
                         >
-                            <div className="relative overflow-hidden rounded-3xl aspect-[3/4] mb-6 shadow-xl bg-white border border-gray-100">
-                                {member.image ? (
-                                    <img
-                                        src={getMediaUrl(member.image)}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                ) : (
-                                    <div className="w-full h-full bg-gray-50 flex items-center justify-center text-gray-200">
-                                        <FiUsers className="w-24 h-24" />
-                                    </div>
-                                )}
-
-                                {/* Overlay Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                                {/* Info Box (Overlay) */}
-                                <div className="absolute bottom-0 left-0 w-full p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                    <p className="text-white/80 text-sm italic line-clamp-3">
-                                        {member.description}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="text-center">
-                                <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#E9B10C] transition-colors duration-300">
+                            <div className="relative overflow-hidden rounded-3xl p-8 mb-6 shadow-xl bg-gray-50 border border-gray-100 flex flex-col items-center justify-center text-center h-full min-h-auto">
+                                <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#E9B10C] transition-colors duration-300 mb-2">
                                     {member.name}
                                 </h4>
-                                <p className="text-[#E9B10C] text-sm font-bold uppercase tracking-widest mt-1 flex items-center justify-center gap-2">
-                                    <FiBriefcase className="w-3 h-3" />
+                                <p className="text-[#E9B10C] text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-2 mb-4">
+                                    <FiBriefcase className="w-4 h-4" />
                                     {member.position}
+                                </p>
+                                <p className="text-gray-600 text-sm leading-relaxed">
+                                    {member.description}
                                 </p>
                             </div>
                         </motion.div>

@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiFolder, FiMapPin, FiLoader, FiChevronRight, FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useGetProjects } from '../../hooks/useProjects';
 
 export default function FeaturedProjectsSection() {
+    const { t } = useTranslation();
     const { data: projects, isLoading } = useGetProjects();
 
     // Show max 4 featured projects
@@ -23,17 +25,17 @@ export default function FeaturedProjectsSection() {
                 >
                     <div>
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                            FEATURED PROJECTS
+                            {t('featured_projects.label')}
                         </h3>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-                            Our Project Portfolio
+                            {t('featured_projects.title')}
                         </h2>
                     </div>
                     <Link
                         to="/projects"
                         className="flex items-center space-x-2 text-sm font-bold text-[#E9B10C] hover:text-[#c4950a] transition-colors group"
                     >
-                        <span>View All Projects</span>
+                        <span>{t('featured_projects.view_all')}</span>
                         <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </motion.div>
@@ -46,7 +48,7 @@ export default function FeaturedProjectsSection() {
                 ) : featured.length === 0 ? (
                     <div className="flex flex-col items-center justify-center h-48 border-2 border-dashed border-gray-200 rounded-2xl bg-white text-gray-500">
                         <FiFolder className="w-12 h-12 text-gray-300 mb-2" />
-                        <p>Projects coming soon.</p>
+                        <p>{t('featured_projects.coming_soon')}</p>
                     </div>
                 ) : (
                     /* Projects Grid */
@@ -75,7 +77,7 @@ export default function FeaturedProjectsSection() {
                                                 <FiFolder className="text-[#E9B10C] w-6 h-6" />
                                             </div>
                                             <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 bg-blue-50 text-blue-600 rounded-lg border border-blue-100">
-                                                {project.status || 'Active'}
+                                                {project.status === 'Completed' ? t('featured_projects.status.completed') : t('featured_projects.status.active')}
                                             </span>
                                         </div>
 
@@ -94,7 +96,7 @@ export default function FeaturedProjectsSection() {
 
                                         <div className="mt-auto">
                                             <div className="flex justify-between text-xs text-gray-500 mb-1 font-medium">
-                                                <span>Project Progress</span>
+                                                <span>{t('featured_projects.progress')}</span>
                                                 <span className="font-bold text-gray-900">{totalProgress}%</span>
                                             </div>
                                             <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
@@ -121,7 +123,7 @@ export default function FeaturedProjectsSection() {
                             to="/projects"
                             className="flex items-center space-x-2 px-6 py-3 bg-[#E9B10C] text-black font-bold rounded-xl hover:bg-[#c4950a] transition-colors shadow-lg"
                         >
-                            <span>View All Projects</span>
+                            <span>{t('featured_projects.view_all')}</span>
                             <FiChevronRight />
                         </Link>
                     </div>

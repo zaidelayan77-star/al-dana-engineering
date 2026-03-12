@@ -1,14 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiCheckCircle } from 'react-icons/fi';
 import img1 from '../../assets/images/new-images/مختبر فحص التربة 2.png';
 
 export default function CertificationsIntro() {
+    const { t } = useTranslation();
+
     const points = [
-        "Commitment to International Quality Standards",
-        "Environmental Management System Integration",
-        "Occupational Health & Safety prioritizing",
-        "Continuous Improvement in Engineering Processes"
+        t('certs_intro.points.p1'),
+        t('certs_intro.points.p2'),
+        t('certs_intro.points.p3'),
+        t('certs_intro.points.p4')
     ];
 
     return (
@@ -24,13 +27,13 @@ export default function CertificationsIntro() {
                         transition={{ duration: 0.6 }}
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-4">
-                            QUALITY ASSURANCE
+                            {t('certs_intro.label')}
                         </h3>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-primary leading-tight">
-                            Commited to Delivering Engineering Excellence
+                            {t('certs_intro.title')}
                         </h2>
                         <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                            Our dedication to quality is reflected in our strict adherence to international standards. We maintain rigorous quality control measures across all our operations, ensuring that every project meets the highest benchmarks of safety, durability, and performance.
+                            {t('certs_intro.desc')}
                         </p>
 
                         <div className="space-y-4">
@@ -54,14 +57,14 @@ export default function CertificationsIntro() {
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <img
                                 src={img1}
-                                alt="Quality Assurance"
+                                alt={t('certs_intro.image_alt')}
                                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
 
                             <div className="absolute bottom-8 left-8 right-8 text-white">
-                                <span className="block text-4xl font-bold text-[#E9B10C] mb-2">100%</span>
-                                <span className="text-lg font-medium opacity-90">Compliance with Global Standards</span>
+                                <span className="block text-4xl font-bold text-[#E9B10C] mb-2">{t('certs_intro.compliance.value')}</span>
+                                <span className="text-lg font-medium opacity-90">{t('certs_intro.compliance.label')}</span>
                             </div>
                         </div>
 

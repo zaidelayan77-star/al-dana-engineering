@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { FiX, FiChevronLeft, FiChevronRight, FiMaximize2 } from 'react-icons/fi';
 import img1 from '../../assets/images/new-images/شاحنة الحفر.png';
 import img2 from '../../assets/images/new-images/فريق الحفر.png';
@@ -8,14 +9,15 @@ import img3 from '../../assets/images/new-images/عامل يفحص المواد 
 import img4 from '../../assets/images/new-images/مختبر فحص التربة 3.png';
 
 export default function ProjectDocumentationSection() {
+    const { t } = useTranslation();
     const [selectedImage, setSelectedImage] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const images = [
-        { id: 1, src: img1, alt: "Drilling Exploration Work" },
-        { id: 2, src: img2, alt: "Field Engineering Team" },
-        { id: 3, src: img3, alt: "Material Quality Testing" },
-        { id: 4, src: img4, alt: "Soil Laboratory Analysis" }
+        { id: 1, src: img1, alt: t('gallery.items.drilling') },
+        { id: 2, src: img2, alt: t('gallery.items.team') },
+        { id: 3, src: img3, alt: t('gallery.items.testing') },
+        { id: 4, src: img4, alt: t('gallery.items.analysis') }
     ];
 
     const openModal = (index) => {
@@ -53,13 +55,13 @@ export default function ProjectDocumentationSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                            PROJECT DOCUMENTATION
+                            {t('gallery.label')}
                         </h3>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-primary">
-                            Photo Gallery
+                            {t('gallery.title')}
                         </h2>
                         <p className="max-w-2xl mx-auto text-gray-500 text-lg leading-relaxed">
-                            Visual documentation of field investigation activities and laboratory operations.
+                            {t('gallery.desc')}
                         </p>
                     </motion.div>
                 </div>
@@ -96,7 +98,7 @@ export default function ProjectDocumentationSection() {
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-3 bg-[#E9B10C] text-white font-bold rounded-lg hover:bg-[#c4950a] transition-colors shadow-md uppercase tracking-wider text-sm"
                         >
-                            View All Gallery
+                            {t('gallery.view_all')}
                         </motion.button>
                     </Link>
                 </div>

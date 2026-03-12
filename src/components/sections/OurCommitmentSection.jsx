@@ -1,44 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiShield, FiHeart, FiActivity } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
+import { FiShield, FiHeart } from 'react-icons/fi';
 import { FaHardHat, FaLeaf } from 'react-icons/fa';
 
 export default function OurCommitmentSection() {
+    const { t } = useTranslation();
+
     const commitments = [
         {
             icon: <FiShield className="w-6 h-6 text-[#E9B10C]" />,
-            title: "QUALITY"
+            title: t('our_commitment.items.quality')
         },
         {
             icon: <FiHeart className="w-6 h-6 text-[#E9B10C]" />,
-            title: "HEALTH"
+            title: t('our_commitment.items.health')
         },
         {
             icon: <FaHardHat className="w-6 h-6 text-[#E9B10C]" />,
-            title: "SAFETY"
+            title: t('our_commitment.items.safety')
         },
         {
             icon: <FaLeaf className="w-6 h-6 text-[#E9B10C]" />,
-            title: "ENVIRONMENT"
+            title: t('our_commitment.items.environment')
         }
     ];
 
     const stats = [
         {
             value: "25+",
-            label: "YEARS EXPERIENCE"
+            label: t('our_commitment.stats.exp')
         },
         {
             value: "2,838+",
-            label: "PROJECTS COMPLETED"
+            label: t('our_commitment.stats.projects')
         },
         {
             value: "ISO 17025",
-            label: "ISO ACCREDITED LAB"
+            label: t('our_commitment.stats.iso')
         },
         {
             value: "30+",
-            label: "ENGINEERS & SPECIALISTS"
+            label: t('our_commitment.stats.team')
         }
     ];
 
@@ -54,20 +57,18 @@ export default function OurCommitmentSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-4">
-                            OUR COMMITMENT
+                            {t('our_commitment.label')}
                         </h3>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                            Quality, Health, Safety & Environment
+                            {t('our_commitment.title')}
                         </h2>
                         <p className="text-gray-500 leading-relaxed text-lg max-w-3xl mx-auto mb-16">
-                            Al Dana Engineering Laboratories strictly follows Quality, Health, Safety, and
-                            Environmental standards in all field and laboratory operations, ensuring safe working
-                            environments and accurate testing outcomes.
+                            {t('our_commitment.desc')}
                         </p>
                     </motion.div>
 
                     {/* Icons Row */}
-                    <div className="flex flex-wrapjustify-center gap-12 md:gap-20 justify-center">
+                    <div className="flex flex-wrap gap-12 md:gap-20 justify-center">
                         {commitments.map((item, index) => (
                             <motion.div
                                 key={index}
@@ -114,4 +115,4 @@ export default function OurCommitmentSection() {
             </div>
         </section>
     );
-}
+}

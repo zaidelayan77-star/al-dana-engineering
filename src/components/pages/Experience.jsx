@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import HeroPages from '../shared/HeroPages';
 import ContactOurTeamSection from '../sections/ContactOurTeamSection';
 import coverImg from '../../assets/images/1 (5).jpg';
@@ -8,13 +9,15 @@ import ProjectCategoriesSection from '../sections/ProjectCategoriesSection';
 import OurPartnersSection from '../sections/OurPartnersSection';
 
 export default function Experience() {
+    const { t } = useTranslation();
+
     return (
         <div className="w-full">
             <HeroPages
                 image={coverImg}
-                subtitle="EXPERIENCE"
-                title="EXPERIENCE"
-                description="Let's Discuss Your Project Requirements"
+                subtitle={t('pages.experience.subtitle')}
+                title={t('pages.experience.title')}
+                description={t('pages.experience.description')}
             />
 
             <EngineeringExperienceSection />

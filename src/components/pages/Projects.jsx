@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiFolder, FiMapPin, FiClock, FiActivity, FiLoader, FiChevronRight, FiCheckCircle } from 'react-icons/fi';
 import HeroPages from '../shared/HeroPages';
 import coverImg from '../../assets/images/1 (6).jpg';
@@ -7,6 +8,7 @@ import ContactOurTeamSection from '../sections/ContactOurTeamSection';
 import { useGetProjects } from '../../hooks/useProjects';
 
 export default function Projects() {
+    const { t } = useTranslation();
     const { data: projects, isLoading, error } = useGetProjects();
     const [selectedProjectId, setSelectedProjectId] = useState(null);
 
@@ -24,9 +26,9 @@ export default function Projects() {
         <div className="w-full bg-gray-50 min-h-screen">
             <HeroPages
                 image={coverImg}
-                subtitle="PROJECTS"
-                title="Project Progress & Showcases"
-                description="Explore our portfolio of successful projects across Abu Dhabi and the UAE, showcasing our true commitment to engineering excellence."
+                subtitle={t('pages.projects.subtitle')}
+                title={t('pages.projects.title')}
+                description={t('pages.projects.description')}
             />
 
             <section className="py-20 relative overflow-hidden">
@@ -41,13 +43,13 @@ export default function Projects() {
                             transition={{ duration: 0.6 }}
                         >
                             <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3 text-shadow-sm">
-                                OUR EXPERTISE
+                                {t('projects_page.label')}
                             </h3>
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-primary text-shadow-sm">
-                                Engineering Portfolio
+                                {t('projects_page.title')}
                             </h2>
                             <p className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed font-light">
-                                Trace the journey of our latest engineering projects, from initial field investigations to the final certified reporting. Quality and transparency in every step.
+                                {t('projects_page.desc')}
                             </p>
                         </motion.div>
                     </div>
@@ -56,18 +58,18 @@ export default function Projects() {
                     {isLoading ? (
                         <div className="flex flex-col items-center justify-center py-24 mb-10 bg-white rounded-3xl shadow-sm border border-gray-100 max-w-4xl mx-auto">
                             <FiLoader className="w-12 h-12 text-[#E9B10C] animate-spin mb-4" />
-                            <p className="text-gray-500 font-medium text-lg">Loading Project Data...</p>
+                            <p className="text-gray-500 font-medium text-lg">{t('projects_page.loading')}</p>
                         </div>
                     ) : error ? (
                         <div className="flex flex-col items-center justify-center py-24 bg-red-50 rounded-3xl border border-red-100 max-w-2xl mx-auto text-center mb-10">
-                            <p className="text-red-500 font-bold mb-2 text-xl">Error Loading Projects</p>
-                            <p className="text-gray-600 text-sm">Our servers are currently undergoing maintenance, please try again later.</p>
+                            <p className="text-red-500 font-bold mb-2 text-xl">{t('projects_page.error_title')}</p>
+                            <p className="text-gray-600 text-sm">{t('projects_page.error_desc')}</p>
                         </div>
                     ) : items.length === 0 ? (
                         <div className="flex flex-col items-center justify-center py-24 border-2 border-dashed border-gray-200 rounded-3xl bg-white max-w-3xl mx-auto text-center mb-10">
                             <FiFolder className="w-16 h-16 text-gray-300 mb-6" />
-                            <p className="text-gray-500 font-medium text-xl">No projects available at the moment.</p>
-                            <p className="text-gray-400 text-sm mt-3 lg:w-3/4 mx-auto leading-relaxed">We are currently updating our portfolio. Please check back soon for exciting project highlights.</p>
+                            <p className="text-gray-500 font-medium text-xl">{t('projects_page.no_projects')}</p>
+                            <p className="text-gray-400 text-sm mt-3 lg:w-3/4 mx-auto leading-relaxed">{t('projects_page.no_projects_desc')}</p>
                         </div>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,7 +100,7 @@ export default function Projects() {
                                                     {isCompleted ? <FiCheckCircle className="w-7 h-7" /> : <FiFolder className="w-7 h-7" />}
                                                 </div>
                                                 <div className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg border ${isCompleted ? 'border-green-200 text-green-700 bg-green-50/50' : 'border-yellow-200 text-yellow-700 bg-yellow-50/50'}`}>
-                                                    {project.status || 'Active'}
+                                                    {project.status || t('projects_page.active')}
                                                 </div>
                                             </div>
 
@@ -113,7 +115,7 @@ export default function Projects() {
                                             <div className="mt-auto space-y-4">
                                                 <div className="flex flex-col space-y-1">
                                                     <div className="flex justify-between items-center text-xs font-bold text-gray-500 mb-2 tracking-wide uppercase">
-                                                        <span>Overall Task Progress</span>
+                                                        <span>{t('projects_page.progress')}</span>
                                                         <span className={totalProgress === 100 ? 'text-green-600' : 'text-gray-900'}>{totalProgress}%</span>
                                                     </div>
                                                     <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden shadow-inner">
@@ -130,7 +132,7 @@ export default function Projects() {
                                                 <div className="flex justify-between items-center pt-5 border-t border-gray-100 text-sm text-gray-500 mt-6">
                                                     <div className="flex items-center space-x-2 font-medium">
                                                         <FiMapPin className="text-gray-400 group-hover:text-[#E9B10C] transition-colors" />
-                                                        <span className="truncate max-w-[120px]">{project.location || 'Abu Dhabi'}</span>
+                                                        <span className="truncate max-w-[120px]">{project.location || t('projects_page.location_fallback')}</span>
                                                     </div>
                                                     <div className="flex items-center space-x-2 font-medium">
                                                         <FiClock className="text-gray-400 group-hover:text-[#E9B10C] transition-colors" />
@@ -149,7 +151,7 @@ export default function Projects() {
                                                     exit={{ height: 0, opacity: 0 }}
                                                     className="bg-gray-50/80 border-t border-gray-100 px-8 py-6"
                                                 >
-                                                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Project Milestones</h4>
+                                                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">{t('projects_page.milestones')}</h4>
                                                     <div className="space-y-4 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
                                                         {stages.map((stage, sIdx) => (
                                                             <div key={stage.id || sIdx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group/stage">
@@ -205,4 +207,4 @@ export default function Projects() {
             <ContactOurTeamSection />
         </div>
     );
-}
+}

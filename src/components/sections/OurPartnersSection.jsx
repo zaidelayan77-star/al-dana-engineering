@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useGetPartners } from '../../hooks/usePartners';
 
 export default function OurPartnersSection() {
+    const { t } = useTranslation();
     const { data: apiPartners, isLoading } = useGetPartners();
 
     const staticPartners = [
@@ -22,7 +24,7 @@ export default function OurPartnersSection() {
         if (!path) return '';
         if (path.startsWith('http')) return path;
         const cleanPath = path.startsWith('/') ? path.substring(1) : path;
-        return `https://al-danaengineering.com/api/storage/app/public/${cleanPath}`;
+        return `https://api.al-danaengineering.com/storage/${cleanPath}`;
     };
 
     // Use API partners if available, otherwise static list
@@ -40,13 +42,13 @@ export default function OurPartnersSection() {
                     transition={{ duration: 0.6 }}
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        OUR PARTNERS
+                        {t('our_partners.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                        Trusted by Engineering Consultants & Contractors
+                        {t('our_partners.title')}
                     </h2>
                     <p className="max-w-3xl mx-auto text-gray-500 text-lg leading-relaxed">
-                        Our project portfolio reflects long-term collaboration with leading contractors, consultants, and government entities across the UAE.
+                        {t('our_partners.desc')}
                     </p>
                 </motion.div>
             </div>
@@ -76,7 +78,7 @@ export default function OurPartnersSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                                className="h-32 bg-white rounded-xl border border-gray-100 flex items-center justify-center p-4 hover:shadow-md transition-shadow duration-300 overflow-hidden group"
+                                className="h-32 bg-[#F8F9FA] rounded-xl border border-gray-100 flex items-center justify-center p-6 hover:shadow-md transition-shadow duration-300 overflow-hidden group"
                             >
                                 {partner.logo ? (
                                     <img

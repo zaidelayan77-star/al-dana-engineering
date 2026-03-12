@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import HeroPages from '../shared/HeroPages';
 import coverImg from '../../assets/images/1 (4).jpg';
 import CertificationsIntro from '../sections/CertificationsIntro';
@@ -8,13 +9,15 @@ import ContactOurTeamSection from '../sections/ContactOurTeamSection';
 
 
 export default function Certifications() {
+    const { t } = useTranslation();
+
     return (
         <div className="w-full">
             <HeroPages
                 image={coverImg}
-                subtitle="QUALITY & EXCELLENCE"
-                title="CERTIFICATIONS"
-                description="Our commitment to international standards and quality assurance."
+                subtitle={t('pages.certifications.subtitle')}
+                title={t('pages.certifications.title')}
+                description={t('pages.certifications.description')}
             />
 
             <CertificationsIntro />

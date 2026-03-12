@@ -1,32 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FaLandmark, FaBuilding, FaIndustry, FaGasPump, FaShieldAlt, FaCity } from 'react-icons/fa';
 
 export default function ProjectCategoriesSection() {
+    const { t } = useTranslation();
+
     const categories = [
         {
             icon: <FaLandmark className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Infrastructure Projects"
+            title: t('project_categories.items.infra')
         },
         {
             icon: <FaCity className="w-8 h-8 text-[#E9B10C]" />,
-            title: "High-rise Buildings"
+            title: t('project_categories.items.high_rise')
         },
         {
             icon: <FaIndustry className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Industrial Facilities"
+            title: t('project_categories.items.industrial')
         },
         {
             icon: <FaGasPump className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Oil & Gas Developments"
+            title: t('project_categories.items.oil_gas')
         },
         {
             icon: <FaShieldAlt className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Government Projects"
+            title: t('project_categories.items.gov')
         },
         {
             icon: <FaBuilding className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Commercial Construction"
+            title: t('project_categories.items.commercial')
         }
     ];
 
@@ -61,10 +64,10 @@ export default function ProjectCategoriesSection() {
                     className="mb-12"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        PROJECT CATEGORIES
+                        {t('project_categories.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-                        Types of Projects We Support
+                        {t('project_categories.title')}
                     </h2>
                 </motion.div>
 
@@ -95,4 +98,4 @@ export default function ProjectCategoriesSection() {
             </div>
         </section>
     );
-}
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiX, FiChevronLeft, FiChevronRight, FiMaximize2, FiLoader, FiVideo } from 'react-icons/fi';
 import HeroPages from '../shared/HeroPages';
 import coverImg from '../../assets/images/1 (6).jpg';
@@ -7,6 +8,7 @@ import ContactOurTeamSection from '../sections/ContactOurTeamSection';
 import { useGetGalleryItems } from '../../hooks/useGallery';
 
 export default function Gallery() {
+    const { t } = useTranslation();
     const { data: galleryItems, isLoading, error } = useGetGalleryItems();
     const [selectedMedia, setSelectedMedia] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,9 +51,9 @@ export default function Gallery() {
         <div className="w-full">
             <HeroPages
                 image={coverImg}
-                subtitle="GALLERY"
-                title="Our Project Portfolio"
-                description="Explore visual documentation of our engineering excellence across various projects."
+                subtitle={t('pages.gallery.subtitle')}
+                title={t('pages.gallery.title')}
+                description={t('pages.gallery.description')}
             />
 
             <section className="py-20 bg-gray-50">
@@ -65,13 +67,13 @@ export default function Gallery() {
                             transition={{ duration: 0.6 }}
                         >
                             <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                                OUR WORK
+                                {t('gallery_page.label')}
                             </h3>
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-primary">
-                                Complete Media Gallery
+                                {t('gallery_page.title')}
                             </h2>
                             <p className="max-w-2xl mx-auto text-gray-500 text-lg leading-relaxed">
-                                A comprehensive look at our field investigations, laboratory testing, and successful project deliveries.
+                                {t('gallery_page.desc')}
                             </p>
                         </motion.div>
                     </div>
@@ -80,17 +82,17 @@ export default function Gallery() {
                     {isLoading ? (
                         <div className="flex flex-col items-center justify-center py-24">
                             <FiLoader className="w-12 h-12 text-[#E9B10C] animate-spin mb-4" />
-                            <p className="text-gray-500 font-medium">Loading gallery items...</p>
+                            <p className="text-gray-500 font-medium">{t('gallery_page.loading')}</p>
                         </div>
                     ) : error ? (
                         <div className="flex flex-col items-center justify-center py-24 bg-red-50 rounded-2xl border border-red-100 max-w-2xl mx-auto">
-                            <p className="text-red-500 font-bold mb-2">Error loading gallery</p>
-                            <p className="text-gray-600 text-sm">Please try again later.</p>
+                            <p className="text-red-500 font-bold mb-2">{t('gallery_page.error_title')}</p>
+                            <p className="text-gray-600 text-sm">{t('gallery_page.error_desc')}</p>
                         </div>
                     ) : items.length === 0 ? (
                         <div className="flex flex-col items-center justify-center py-24 border-2 border-dashed border-gray-200 rounded-3xl bg-white max-w-3xl mx-auto text-center">
-                            <p className="text-gray-500 font-medium text-lg">No media available at the moment.</p>
-                            <p className="text-gray-400 text-sm mt-2">Check back later for exciting project updates.</p>
+                            <p className="text-gray-500 font-medium text-lg">{t('gallery_page.no_items')}</p>
+                            <p className="text-gray-400 text-sm mt-2">{t('gallery_page.no_items_desc')}</p>
                         </div>
                     ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -201,7 +203,7 @@ export default function Gallery() {
                                 >
                                     <h3 className="text-xl md:text-2xl font-bold text-white mb-1 shadow-black">{selectedMedia.title}</h3>
                                     <p className="text-[#E9B10C] text-sm font-medium tracking-widest uppercase">
-                                        Item {currentIndex + 1} of {items.length}
+                                        {t('gallery_page.item_count', { current: currentIndex + 1, total: items.length })}
                                     </p>
                                 </motion.div>
                             </div>
@@ -220,4 +222,4 @@ export default function Gallery() {
             <ContactOurTeamSection />
         </div>
     );
-}
+}

@@ -1,44 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { FaMountain, FaFlask, FaVials, FaMapMarkedAlt, FaCity, FaIndustry, FaSearchLocation } from 'react-icons/fa';
 
 export default function OurServicesHome() {
+    const { t } = useTranslation();
+    
     const services = [
         {
             icon: <FaMountain size={24} />,
-            title: "Geotechnical Investigations",
-            description: "Rotary drilling, SPT testing, soil and rock sampling, groundwater level measurement."
+            key: "geotechnical"
         },
         {
             icon: <FaFlask size={24} />,
-            title: "Soil Testing Services",
-            description: "Soil classification, particle size analysis, Atterberg limits, rock strength testing."
+            key: "soil"
         },
         {
             icon: <FaVials size={24} />,
-            title: "Chemical Testing",
-            description: "Sulphates, chlorides, pH testing, soil and groundwater chemical analysis."
+            key: "chemical"
         },
         {
             icon: <FaMapMarkedAlt size={24} />,
-            title: "Geophysical Services",
-            description: "Subsurface investigations using advanced geophysical techniques."
+            key: "geophysical"
         },
         {
             icon: <FaCity size={24} />,
-            title: "Building Material Testing",
-            description: "Concrete cube testing, compression strength testing, concrete core testing."
+            key: "building"
         },
         {
             icon: <FaIndustry size={24} />,
-            title: "Oil & Gas Services",
-            description: "Onshore and offshore soil testing and laboratory support for energy sector projects."
+            key: "oil_gas"
         },
         {
             icon: <FaSearchLocation size={24} />,
-            title: "Site Investigation",
-            description: "Testing and analysis of soil properties for safe and reliable construction."
+            key: "site"
         }
     ];
 
@@ -56,7 +52,7 @@ export default function OurServicesHome() {
                     >
                         <div className="h-0.5 w-12 bg-[#E9B10C]"></div>
                         <span className="text-[#666666] font-bold text-xs tracking-[0.2em] uppercase">
-                            WHAT WE DO
+                            {t('our_services.label')}
                         </span>
                         <div className="h-0.5 w-12 bg-[#E9B10C]"></div>
                     </motion.div>
@@ -68,7 +64,7 @@ export default function OurServicesHome() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-3xl md:text-5xl font-bold text-gray-900 font-primary"
                     >
-                        Our Services
+                        {t('our_services.title')}
                     </motion.h2>
                 </div>
 
@@ -89,15 +85,15 @@ export default function OurServicesHome() {
                             </div>
 
                             <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#E9B10C] transition-colors duration-300">
-                                {service.title}
+                                {t(`our_services.items.${service.key}.title`)}
                             </h3>
 
                             <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                                {service.description}
+                                {t(`our_services.items.${service.key}.desc`)}
                             </p>
 
                             <Link to="/services" className="inline-flex items-center text-xs font-bold text-[#E9B10C] uppercase tracking-wider hover:text-[#c4950a] transition-colors">
-                                Learn More
+                                {t('our_services.learn_more')}
                                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
@@ -114,11 +110,11 @@ export default function OurServicesHome() {
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-3 bg-[#E9B10C] text-white font-bold rounded hover:bg-[#c4950a] transition-colors shadow-lg uppercase tracking-wider text-sm"
                         >
-                            View All Services
+                            {t('our_services.view_all')}
                         </motion.button>
                     </Link>
                 </div>
             </div>
         </section>
     );
-}
+}

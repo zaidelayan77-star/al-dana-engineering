@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import whoWeAreImg from '../../assets/images/new-images/مختبر فحص التربة 1.png';
 
 export default function WhoWeAreSection() {
+    const { t } = useTranslation();
+
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,26 +20,22 @@ export default function WhoWeAreSection() {
                     >
                         <div>
                             <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                                WHO WE ARE
+                                {t('who_we_are.label')}
                             </h3>
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
-                                Al Dana Engineering Laboratories
+                                {t('home_hero.company_name')}
                             </h2>
                         </div>
 
                         <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
                             <p>
-                                Al Dana Engineering Laboratories is a specialized engineering laboratory
-                                established in 1996 in Abu Dhabi, United Arab Emirates.
+                                {t('who_we_are.p1')}
                             </p>
                             <p>
-                                We provide geotechnical investigations, soil testing, and construction material
-                                testing services to support infrastructure, building, and industrial
-                                developments across the UAE.
+                                {t('who_we_are.p2')}
                             </p>
                             <p>
-                                Our mission is to deliver accurate data, reliable analysis, and certified
-                                engineering reports that help clients make safe and confident decisions.
+                                {t('who_we_are.p3')}
                             </p>
                         </div>
                     </motion.div>
@@ -52,10 +51,9 @@ export default function WhoWeAreSection() {
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <img
                                 src={whoWeAreImg}
-                                alt="Al Dana Laboratory Team"
+                                alt={t('who_we_are.image_alt')}
                                 className="w-full h-full object-cover"
                             />
-                            {/* Decorative element if needed, matching style */}
                             <div className="absolute bottom-0 left-0 w-24 h-2 bg-[#E9B10C]" />
                         </div>
                     </motion.div>
@@ -63,4 +61,4 @@ export default function WhoWeAreSection() {
             </div>
         </section>
     );
-}
+}

@@ -1,23 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FaShieldAlt, FaAward, FaCheckCircle } from 'react-icons/fa';
 
 export default function QualityAssurance() {
+    const { t } = useTranslation();
+    
     const items = [
         {
             icon: <FaShieldAlt size={28} />,
-            title: "ISO/IEC 17025:2017",
-            description: "Accredited for testing and calibration laboratories, ensuring competence, impartiality, and consistent operation."
+            key: "iso"
         },
         {
             icon: <FaAward size={28} />,
-            title: "ENAS Accredited",
-            description: "Emirates National Accreditation System certified laboratory with recognized testing capabilities."
+            key: "enas"
         },
         {
             icon: <FaCheckCircle size={28} />,
-            title: "Government Approved",
-            description: "Pre-qualified and approved by UAE government entities for engineering and testing services."
+            key: "government"
         }
     ];
 
@@ -36,7 +36,7 @@ export default function QualityAssurance() {
                     >
                         <div className="h-0.5 w-12 bg-[#E9B10C]"></div>
                         <span className="text-[#666666] font-bold text-xs tracking-[0.2em] uppercase">
-                            QUALITY ASSURANCE
+                            {t('quality_assurance.label')}
                         </span>
                         <div className="h-0.5 w-12 bg-[#E9B10C]"></div>
                     </motion.div>
@@ -48,7 +48,7 @@ export default function QualityAssurance() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-3xl md:text-4xl font-bold text-gray-900 font-primary"
                     >
-                        Certifications & Accreditation
+                        {t('quality_assurance.title')}
                     </motion.h2>
                 </div>
 
@@ -68,11 +68,11 @@ export default function QualityAssurance() {
                             </div>
 
                             <h3 className="text-xl font-bold text-gray-900 mb-4">
-                                {item.title}
+                                {t(`quality_assurance.items.${item.key}.title`)}
                             </h3>
 
                             <p className="text-gray-500 text-sm leading-relaxed">
-                                {item.description}
+                                {t(`quality_assurance.items.${item.key}.desc`)}
                             </p>
                         </motion.div>
                     ))}
@@ -81,4 +81,4 @@ export default function QualityAssurance() {
             </div>
         </section>
     );
-}
+}

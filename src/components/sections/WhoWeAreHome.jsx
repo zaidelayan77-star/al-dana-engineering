@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import aboutImg from '../../assets/images/new-images/مراجعة المخططات.png';
 
 export default function WhoWeAreHome() {
+    const { t } = useTranslation();
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,24 +20,24 @@ export default function WhoWeAreHome() {
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="h-0.5 w-8 bg-[#E9B10C]"></div>
                             <span className="text-[#666666] font-bold text-xs tracking-[0.2em] uppercase">
-                                WHO WE ARE
+                                {t('who_we_are.label')}
                             </span>
                         </div>
 
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight font-primary">
-                            About Al Dana <br className="hidden md:block" />
-                            Engineering Laboratories
+                            {t('who_we_are.title_part1')} <br className="hidden md:block" />
+                            {t('who_we_are.title_part2')}
                         </h2>
 
                         <div className="space-y-6 text-gray-500 text-lg leading-relaxed font-light">
                             <p>
-                                Al Dana Engineering Laboratories is a specialized engineering laboratory established in 1996 in Abu Dhabi, United Arab Emirates.
+                                {t('who_we_are.p1')}
                             </p>
                             <p>
-                                We provide professional geotechnical investigations, soil testing, and construction material testing services to support infrastructure, building, and industrial projects.
+                                {t('who_we_are.p2')}
                             </p>
                             <p>
-                                With over 25 years of experience, we deliver accurate data and certified reports that enable safe, reliable, and informed engineering decisions.
+                                {t('who_we_are.p3')}
                             </p>
                         </div>
                     </motion.div>
@@ -53,7 +55,7 @@ export default function WhoWeAreHome() {
                                  Using the provided asset assuming it matches. */}
                             <img
                                 src={aboutImg}
-                                alt="Construction Site with Hard Hat"
+                                alt={t('who_we_are.image_alt')}
                                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                             />
                         </div>

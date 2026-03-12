@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import bgImage from '../../assets/images/new-images/شاحنة الحفر.png';
 
 export default function HomeHero() {
+    const { t } = useTranslation();
     return (
         <section className="relative h-screen w-full overflow-hidden">
             {/* Background Image with Overlay */}
@@ -25,7 +27,7 @@ export default function HomeHero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <h3 className="text-[#E9B10C] font-bold text-xs md:text-sm tracking-[0.3em] uppercase mb-6">
-                        AL DANA ENGINEERING LABORATORIES
+                        {t('home_hero.company_name')}
                     </h3>
                 </motion.div>
 
@@ -35,8 +37,8 @@ export default function HomeHero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight font-primary"
                 >
-                    STRONG FOUNDATIONS
-                    <span className="block text-[#E9B10C] mt-2">FOR A SAFER FUTURE</span>
+                    {t('home_hero.title_main')}
+                    <span className="block text-[#E9B10C] mt-2">{t('home_hero.title_sub')}</span>
                 </motion.h1>
 
                 <motion.div
@@ -46,10 +48,10 @@ export default function HomeHero() {
                     className="space-y-4 mb-10"
                 >
                     <p className="text-gray-200 text-lg md:text-xl font-medium tracking-wide">
-                        Trusted Geotechnical & Soil Testing Expertise Since 1996
+                        {t('home_hero.experience_years')}
                     </p>
                     <p className="text-gray-400 text-sm md:text-base font-light italic">
-                        Accurate Samples. Better Engineering Decisions.
+                        {t('home_hero.tagline')}
                     </p>
                 </motion.div>
 
@@ -61,12 +63,12 @@ export default function HomeHero() {
                 >
                     <Link to="/services">
                         <button className="px-8 py-3 bg-[#E9B10C] text-black font-bold text-sm tracking-wider uppercase rounded hover:bg-[#c4950a] transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(233,177,12,0.3)]">
-                            OUR SERVICES
+                            {t('home_hero.cta_services')}
                         </button>
                     </Link>
                     <Link to="/contact-us">
                         <button className="px-8 py-3 bg-transparent border border-white text-white font-bold text-sm tracking-wider uppercase rounded hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
-                            CONTACT US
+                            {t('home_hero.cta_contact')}
                         </button>
                     </Link>
                 </motion.div>

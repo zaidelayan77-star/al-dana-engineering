@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import HeroPages from '../shared/HeroPages';
 import ContactOurTeamSection from '../sections/ContactOurTeamSection';
 import coverImg from '../../assets/images/new-images/مراجعة المخططات.png';
@@ -11,13 +12,15 @@ import OurCommitmentSection from '../sections/OurCommitmentSection';
 import TeamSection from '../sections/TeamSection';
 
 export default function AboutUs() {
+    const { t } = useTranslation();
+
     return (
         <div className="w-full">
             <HeroPages
                 image={coverImg}
-                subtitle="WHO WE ARE"
-                title="ABOUT US"
-                description="Leading the way in engineering excellence and material testing."
+                subtitle={t('pages.about.subtitle')}
+                title={t('pages.about.title')}
+                description={t('pages.about.description')}
             />
             <WhoWeAreSection />
             <OurJourneySection />

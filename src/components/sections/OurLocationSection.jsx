@@ -1,8 +1,10 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function OurLocationSection() {
+    const { t } = useTranslation();
+
     return (
         <section className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,10 +17,10 @@ export default function OurLocationSection() {
                     className="text-center mb-10"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm uppercase tracking-widest mb-2">
-                        OUR LOCATION
+                        {t('our_location.label')}
                     </h3>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                        Visit Our Laboratory
+                        {t('our_location.title')}
                     </h2>
                 </motion.div>
 
@@ -38,10 +40,10 @@ export default function OurLocationSection() {
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="Our Location Map"
+                        title={t('our_location.map_title')}
                     ></iframe>
                 </motion.div>
             </div>
         </section>
     );
-}
+}

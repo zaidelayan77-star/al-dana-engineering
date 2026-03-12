@@ -1,0 +1,690 @@
+{
+  "nav": {
+    "home": "Home",
+    "about_us": "About Us",
+    "services": "Services",
+    "experience": "Experience",
+    "certifications": "Certifications",
+    "projects": "Projects",
+    "gallery": "Gallery",
+    "contact_us": "Contact Us",
+    "jobs_join": "Jobs",
+    "jobs": "Jobs",
+    "account": "Account",
+    "team": "Team"
+  },
+  "pages": {
+    "about": {
+      "subtitle": "ABOUT US",
+      "title": "Who We Are",
+      "description": "Excellence in Engineering & Laboratory Services"
+    },
+    "services": {
+      "subtitle": "OUR SERVICES",
+      "title": "What We Offer",
+      "description": "Comprehensive engineering testing and investigation services."
+    },
+    "experience": {
+      "subtitle": "EXPERIENCE",
+      "title": "Our Track Record",
+      "description": "Decades of proven expertise in the UAE construction sector."
+    },
+    "certifications": {
+      "subtitle": "CERTIFICATIONS",
+      "title": "Quality Assurance",
+      "description": "Certified and accredited for excellence in laboratory testing."
+    },
+    "projects": {
+      "subtitle": "OUR PROJECTS",
+      "title": "Work Portfolio",
+      "description": "A showcase of our major completed and ongoing projects."
+    },
+    "gallery": {
+      "subtitle": "GALLERY",
+      "title": "Visuals",
+      "description": "Photos of our laboratory, equipment, and on-site operations."
+    },
+    "contact": {
+      "subtitle": "CONTACT US",
+      "title": "Get In Touch",
+      "description": "We are here to help you with your engineering testing needs."
+    },
+    "team": {
+      "subtitle": "OUR TEAM",
+      "title": "Experts",
+      "description": "Meet the professionals behind Al Dana Engineering Laboratories."
+    }
+  },
+  "home_hero": {
+    "company_name": "AL DANA ENGINEERING LABORATORIES",
+    "title_main": "STRONG FOUNDATIONS",
+    "title_sub": "FOR A SAFER FUTURE",
+    "experience_years": "Trusted Geotechnical & Soil Testing Expertise Since 1996",
+    "tagline": "Accurate Samples. Better Engineering Decisions.",
+    "cta_services": "OUR SERVICES",
+    "cta_contact": "CONTACT US"
+  },
+  "who_we_are": {
+    "label": "WHO WE ARE",
+    "title_part1": "About Al Dana",
+    "title_part2": "Engineering Laboratories",
+    "p1": "Al Dana Engineering Laboratories is a specialized engineering laboratory established in 1996 in Abu Dhabi, United Arab Emirates.",
+    "p2": "We provide professional geotechnical investigations, soil testing, and construction material testing services to support infrastructure, building, and industrial projects.",
+    "p3": "With over 25 years of experience, we deliver accurate data and certified reports that enable safe, reliable, and informed engineering decisions.",
+    "image_alt": "Construction Site with Hard Hat"
+  },
+  "our_services": {
+    "label": "WHAT WE DO",
+    "title": "Our Services",
+    "core_label": "OUR CORE SERVICES",
+    "core_title": "What We Deliver",
+    "learn_more": "Learn More",
+    "view_all": "View All Services",
+    "items": {
+      "geotechnical": {
+        "title": "Geotechnical Investigations",
+        "desc": "Rotary drilling, SPT testing, soil and rock sampling, groundwater level measurement.",
+        "long_desc": "Professional site investigation services to evaluate soil and ground conditions for engineering design.",
+        "points": [
+          "Rotary drilling",
+          "Standard Penetration Test (SPT)",
+          "Rock Quality Designation (RQD)",
+          "Groundwater level monitoring",
+          "Geotechnical reporting"
+        ]
+      },
+      "soil": {
+        "title": "Soil Testing Services",
+        "desc": "Soil classification, particle size analysis, Atterberg limits, rock strength testing.",
+        "long_desc": "Laboratory testing to determine soil and rock engineering characteristics and behavior.",
+        "points": [
+          "Soil classification",
+          "Particle size analysis",
+          "Atterberg limits",
+          "Moisture content testing",
+          "Rock compressive strength",
+          "Hydrometer"
+        ]
+      },
+      "chemical": {
+        "title": "Chemical Testing",
+        "desc": "Sulphates, chlorides, pH testing, soil and groundwater chemical analysis.",
+        "long_desc": "Chemical analysis to evaluate soil and groundwater suitability for construction applications.",
+        "points": [
+          "Sulphate content testing",
+          "Chloride testing",
+          "pH determination",
+          "Water-soluble salts",
+          "Groundwater chemical analysis"
+        ]
+      },
+      "geophysical": {
+        "title": "Geophysical Services",
+        "desc": "Subsurface investigations using advanced geophysical techniques.",
+        "long_desc": "Non-invasive methods to image the subsurface and identify underground features with high precision.",
+        "points": [
+          "Ground Penetrating Radar (GPR)",
+          "Electrical Resistivity Imaging (ERI)",
+          "Seismic Refraction Surveys",
+          "Electromagnetic Surveys",
+          "Crosshole & Downhole testing"
+        ]
+      },
+      "building": {
+        "title": "Building Material Testing",
+        "desc": "Concrete cube testing, compression strength testing, concrete core testing.",
+        "long_desc": "Quality control testing for concrete and construction materials.",
+        "points": [
+          "Concrete cube compression testing",
+          "Concrete core testing",
+          "Strength verification",
+          "Laboratory material analysis"
+        ]
+      },
+      "oil_gas": {
+        "title": "Oil & Gas Services",
+        "desc": "Onshore and offshore soil testing and laboratory support for energy sector projects.",
+        "long_desc": "Specialized testing and geotechnical support for onshore and offshore industrial projects.",
+        "points": [
+          "Onshore soil investigation",
+          "Offshore testing support",
+          "Industrial site evaluation",
+          "Laboratory analysis for energy projects"
+        ]
+      },
+      "site": {
+        "title": "Site Investigation",
+        "desc": "Testing and analysis of soil properties for safe and reliable construction."
+      }
+    }
+  },
+  "featured_projects": {
+    "label": "FEATURED PROJECTS",
+    "title": "Our Project Portfolio",
+    "view_all": "View All Projects",
+    "coming_soon": "Projects coming soon.",
+    "progress": "Project Progress",
+    "status": {
+      "active": "Active",
+      "completed": "Completed"
+    }
+  },
+  "track_record": {
+    "label": "OUR TRACK RECORD",
+    "title": "Experience & Achievements",
+    "stats": {
+      "established": "ESTABLISHED IN",
+      "projects": "PROJECTS COMPLETED",
+      "accredited": "ISO/IEC ACCREDITED",
+      "employees": "EMPLOYEES"
+    }
+  },
+  "quality_assurance": {
+    "label": "QUALITY ASSURANCE",
+    "title": "Certifications & Accreditation",
+    "items": {
+      "iso": {
+        "title": "ISO/IEC 17025:2017",
+        "desc": "Accredited for testing and calibration laboratories, ensuring competence, impartiality, and consistent operation."
+      },
+      "enas": {
+        "title": "ENAS Accredited",
+        "desc": "Emirates National Accreditation System certified laboratory with recognized testing capabilities."
+      },
+      "government": {
+        "title": "Government Approved",
+        "desc": "Pre-qualified and approved by UAE government entities for engineering and testing services."
+      },
+      "calibrated": {
+        "title": "Calibrated Equipment",
+        "desc": "Continuous quality assurance with regularly calibrated instruments meeting international compliance."
+      }
+    }
+  },
+  "our_capabilities": {
+    "label": "OUR CAPABILITIES",
+    "title": "Equipment & Technology",
+    "description": "Our laboratory is equipped with advanced testing instruments, modern drilling rigs, and fully calibrated equipment to ensure precision, consistency, and international compliance.",
+    "items": {
+      "instruments": "Advanced Testing Instruments",
+      "rigs": "Modern Drilling Rigs",
+      "calibrated": "Fully Calibrated Equipment",
+      "compliance": "International Compliance"
+    }
+  },
+  "footer": {
+    "description": "We are committed to delivering high-quality engineering solutions with integrity, reliability, and professionalism.",
+    "useful_links": "Useful Links",
+    "contact_us": "Contact Us",
+    "address": "AL DANA ENGG LABORATORIES ,                               42 Ad Diman 6 St - Musaffah - M26 - Abu Dhabi",
+    "phone": "Phone",
+    "email": "Email",
+    "copyright": "© Copyright 2026 – Al Dana Engineering Laboratories"
+  },
+  "mission_vision": {
+    "label": "PURPOSE & DIRECTION",
+    "title": "Mission & Vision",
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To provide reliable geotechnical and material testing services through accuracy, professionalism, and technical expertise."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To be one of the leading engineering laboratories in the UAE recognized for quality, reliability, and engineering excellence."
+    }
+  },
+  "journey": {
+    "label": "OUR JOURNEY",
+    "title": "History & Milestones",
+    "today": "Today",
+    "milestones": {
+      "1996": {
+        "title": "Company Founded",
+        "desc": "Establishment of Al Dana as a specialized geotechnical engineering laboratory."
+      },
+      "2003": {
+        "title": "Geotechnical Expansion",
+        "desc": "Expanded field and laboratory geotechnical services to support major developments."
+      },
+      "2013": {
+        "title": "Accreditation Achievement",
+        "desc": "Achieved ISO/IEC 17025 accreditation for testing and calibration."
+      },
+      "2017": {
+        "title": "Infrastructure Projects",
+        "desc": "Supported major UAE infrastructure and energy sector projects."
+      },
+      "today": {
+        "title": "Growth & Innovation",
+        "desc": "Continuous investment in technology, talent, and service capabilities."
+      }
+    }
+  },
+  "our_people": {
+    "label": "OUR PEOPLE",
+    "title": "Our Team",
+    "p1": "Our team consists of experienced engineers, geologists, laboratory specialists, and field technicians who operate according to international standards to ensure accurate and dependable testing results.",
+    "p2": "With decades of combined expertise across geotechnical engineering, chemical analysis, and construction material testing, our professionals are committed to delivering excellence in every project.",
+    "image_alt": "Al Dana Our Team"
+  },
+  "contact_team": {
+    "title": "Ready to Start Your Project?",
+    "desc": "Our engineering experts are ready to support you with accurate testing and reliable analysis.",
+    "button": "Contact Our Team Today"
+  },
+  "team_section": {
+    "label": "OUR EXPERTS",
+    "title": "Meet Our Dedicated Team",
+    "desc": "Our strength lies in our people. From senior engineers to field technicians, our team is dedicated to precision and engineering excellence.",
+    "view_all": "View All Team Members"
+  },
+  "our_commitment": {
+    "label": "OUR COMMITMENT",
+    "title": "Quality, Health, Safety & Environment",
+    "desc": "Al Dana Engineering Laboratories strictly follows Quality, Health, Safety, and Environmental standards in all field and laboratory operations, ensuring safe working environments and accurate testing outcomes.",
+    "items": {
+      "quality": "QUALITY",
+      "health": "HEALTH",
+      "safety": "SAFETY",
+      "environment": "ENVIRONMENT"
+    },
+    "stats": {
+      "exp": "YEARS EXPERIENCE",
+      "projects": "PROJECTS COMPLETED",
+      "iso": "ISO ACCREDITED LAB",
+      "team": "ENGINEERS & SPECIALISTS"
+    }
+  },
+  "contact_form": {
+    "label": "REACH OUT",
+    "title": "Send Us a Message",
+    "fields": {
+      "full_name": {
+        "label": "Full Name",
+        "placeholder": "Your full name"
+      },
+      "company": {
+        "label": "Company Name",
+        "placeholder": "Your company"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "you@company.com"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "+971 XX XXX XXXX"
+      },
+      "service": {
+        "label": "Service Required",
+        "placeholder": "Select a service",
+        "options": {
+          "geotechnical": "Geotechnical Investigations",
+          "geophysical": "Geophysical Surveys",
+          "soil_rock": "Soil & Rock Testing",
+          "chemical": "Chemical Testing",
+          "materials": "Construction Material Testing",
+          "oil_gas": "Oil & Gas Field Services",
+          "other": "Other Inquiry"
+        }
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about your project requirements..."
+      }
+    },
+    "submit": {
+      "sending": "Sending...",
+      "button": "Send Message"
+    },
+    "why_us": {
+      "title": "Why Choose Al Dana?",
+      "desc": "With over 25 years of expertise in geotechnical engineering and soil testing, we deliver accurate, certified results that enable safe and informed engineering decisions for projects across the UAE and the region.",
+      "features": {
+        "iso": {
+          "title": "ISO/IEC 17025 Accredited",
+          "desc": "Our laboratory meets the highest international standards for testing and calibration."
+        },
+        "equip": {
+          "title": "Advanced Equipment",
+          "desc": "Modern drilling rigs and fully calibrated testing instruments for precise results."
+        },
+        "team": {
+          "title": "Expert Team",
+          "desc": "30+ qualified engineers and technicians with deep domain expertise."
+        }
+      }
+    }
+  },
+  "contact_info": {
+    "label": "CONTACT INFORMATION",
+    "title": "Get In Touch",
+    "items": {
+      "location": {
+        "title": "LOCATION",
+        "details": "AL DANA ENGG LABORATORIES ,                               42 Ad Diman 6 St - Musaffah - M26 - Abu Dhabi"
+      },
+      "phone": {
+        "title": "PHONE",
+        "details": "025585186"
+      },
+      "email": {
+        "title": "EMAIL",
+        "details": "Info@aldanalab.ae"
+      },
+      "hours": {
+        "title": "WORKING HOURS",
+        "details": "Sunday – Thursday | 8:00 AM – 4:00 PM"
+      }
+    }
+  },
+  "our_advantages": {
+    "label": "OUR ADVANTAGES",
+    "title": "Why Work With Al Dana Engineering Laboratories?",
+    "items": {
+      "exp": {
+        "title": "25+ Years Engineering Experience",
+        "desc": "Trusted expertise since 1996 across the UAE and beyond."
+      },
+      "iso": {
+        "title": "ISO/IEC 17025 Accredited Laboratory",
+        "desc": "Internationally recognized testing and calibration standards."
+      },
+      "fast": {
+        "title": "Fast & Reliable Reporting",
+        "desc": "Timely delivery of certified reports for your project deadlines."
+      },
+      "team": {
+        "title": "Experienced Technical Team",
+        "desc": "30+ qualified engineers and technicians dedicated to quality."
+      },
+      "trust": {
+        "title": "Trusted by Contractors & Consultants",
+        "desc": "Preferred partner for major government and private sector projects."
+      }
+    }
+  },
+  "our_partners": {
+    "label": "OUR PARTNERS",
+    "title": "Trusted by Engineering Consultants & Contractors",
+    "desc": "Our project portfolio reflects long-term collaboration with leading contractors, consultants, and government entities across the UAE."
+  },
+  "sectors": {
+    "label": "SECTORS",
+    "title": "Industries We Serve",
+    "items": {
+      "infra": "Infrastructure Projects",
+      "building": "Building Construction",
+      "oil_gas": "Oil & Gas Industry",
+      "gov": "Government Projects",
+      "industrial": "Industrial Developments",
+      "geophysical": "Geophysical Services"
+    }
+  },
+  "why_choose_us": {
+    "label": "WHY CHOOSE US",
+    "title": "Built on Trust & Precision",
+    "items": {
+      "iso": "ISO/IEC 17025 Accredited Laboratory",
+      "team": "Experienced Engineering Team",
+      "results": "Accurate & Reliable Test Results",
+      "equip": "Modern Equipment & Calibration",
+      "report": "Fast Reporting & Technical Support"
+    }
+  },
+  "our_process": {
+    "label": "OUR PROCESS",
+    "title": "How We Deliver Our Services",
+    "steps": {
+      "s1": {
+        "title": "Site Work",
+        "desc": "Evaluate project scope and requirements"
+      },
+      "s2": {
+        "title": "Site Assessment",
+        "desc": "On-site drilling, sampling and data collection"
+      },
+      "s3": {
+        "title": "Laboratory Testing",
+        "desc": "Comprehensive testing in our accredited lab"
+      },
+      "s4": {
+        "title": "Engineering Analysis",
+        "desc": "Expert interpretation of test results"
+      },
+      "s5": {
+        "title": "Final Report",
+        "desc": "Detailed reports with actionable insights"
+      }
+    }
+  },
+  "our_location": {
+    "label": "OUR LOCATION",
+    "title": "Visit Our Laboratory",
+    "map_title": "Our Location Map"
+  },
+  "project_categories": {
+    "label": "PROJECT CATEGORIES",
+    "title": "Types of Projects We Support",
+    "items": {
+      "infra": "Infrastructure Projects",
+      "high_rise": "High-rise Buildings",
+      "industrial": "Industrial Facilities",
+      "oil_gas": "Oil & Gas Developments",
+      "gov": "Government Projects",
+      "commercial": "Commercial Construction"
+    }
+  },
+  "what_we_do": {
+    "label": "WHAT WE DO",
+    "title": "Engineering Services Built on Accuracy",
+    "p1": "Al Dana Engineering Laboratories provides a full range of geotechnical investigations, soil analysis, laboratory testing, and engineering support services.",
+    "p2": "Our solutions are designed to meet international standards and support infrastructure, construction, and industrial projects with reliable data and certified reporting."
+  },
+  "quality_standards": {
+    "label": "INTERNATIONAL STANDARDS",
+    "title": "Accredited Systems",
+    "items": {
+      "qms": {
+        "title": "Quality Management System",
+        "desc": "Ensures consistency in our services and reinforces our commitment to customer satisfaction through effective quality management."
+      },
+      "ems": {
+        "title": "Environmental Management",
+        "desc": "Demonstrates our dedication to sustainable practices and reducing environmental impact across all our projects."
+      },
+      "ohs": {
+        "title": "Occupational Health & Safety",
+        "desc": "Prioritizes the safety and well-being of our workforce, ensuring a secure and hazard-free working environment."
+      }
+    }
+  },
+  "engineering_exp": {
+    "title": "Engineering Experience You Can Trust",
+    "p1": "Al Dana Engineering Laboratories has contributed to numerous infrastructure, construction, and industrial developments by providing accurate geotechnical investigations and material testing services.",
+    "p2": "Our project experience reflects our commitment to quality, safety, and reliable engineering support."
+  },
+  "gallery": {
+    "label": "PROJECT DOCUMENTATION",
+    "title": "Photo Gallery",
+    "desc": "Visual documentation of field investigation activities and laboratory operations.",
+    "view_all": "View All Gallery",
+    "items": {
+      "drilling": "Drilling Exploration Work",
+      "team": "Field Engineering Team",
+      "testing": "Material Quality Testing",
+      "analysis": "Soil Laboratory Analysis"
+    }
+  },
+  "project_workflow": {
+    "label": "PROJECT WORKFLOW",
+    "title": "5-Stage Engineering Progress",
+    "desc": "Track your project through each critical phase of our accredited soil investigation and laboratory testing process.",
+    "stage": "STAGE",
+    "lab_progress": "Lab Testing Progress",
+    "status": {
+      "completed": "Completed",
+      "in_progress": "In Progress",
+      "pending": "Pending"
+    },
+    "stages": {
+      "s1": {
+        "title": "Project Approval & Mobilization",
+        "desc": "Client request review, documentation approval, and scheduling of investigation activities according to project requirements and UAE authority regulations.",
+        "label": "Approved"
+      },
+      "s2": {
+        "title": "Engineering Team Preparation",
+        "desc": "Allocation of geologists, drilling operators, and field technicians. Equipment inspection and site planning prior to mobilization.",
+        "label": "Ready for Field Work"
+      },
+      "s3": {
+        "title": "Field Investigation & Sample Collection",
+        "desc": "Rotary drilling operations, Standard Penetration Testing (SPT), soil and rock sampling, and groundwater measurements conducted at site locations.",
+        "label": "Samples Collected"
+      },
+      "s4": {
+        "title": "Laboratory Testing & Analysis",
+        "desc": "Samples transferred to the laboratory for geotechnical and chemical testing including soil classification, moisture content, sulphate and chloride analysis, and rock strength testing.",
+        "label": "In Progress"
+      },
+      "s5": {
+        "title": "Engineering Reporting & Certified Results",
+        "desc": "Preparation of certified geotechnical investigation reports and engineering analysis in accordance with international testing standards. Estimated reporting period may extend up to several weeks depending on laboratory analysis requirements.",
+        "label": "Pending"
+      }
+    }
+  },
+  "certificates": {
+    "label": "CERTIFICATES",
+    "title": "Official Documentation",
+    "coming_soon": "Certifications will be displayed here soon.",
+    "view_full": "View Fullsize",
+    "download_pdf": "Download PDF"
+  },
+  "certs_intro": {
+    "label": "QUALITY ASSURANCE",
+    "title": "Commited to Delivering Engineering Excellence",
+    "desc": "Our dedication to quality is reflected in our strict adherence to international standards. We maintain rigorous quality control measures across all our operations, ensuring that every project meets the highest benchmarks of safety, durability, and performance.",
+    "points": {
+      "p1": "Commitment to International Quality Standards",
+      "p2": "Environmental Management System Integration",
+      "p3": "Occupational Health & Safety prioritizing",
+      "p4": "Continuous Improvement in Engineering Processes"
+    },
+    "compliance": {
+      "value": "100%",
+      "label": "Compliance with Global Standards"
+    },
+    "image_alt": "Quality Assurance"
+  },
+  "project_info": {
+    "label": "PROJECT INFORMATION",
+    "title": "Project Details",
+    "overview": {
+      "label": "PROJECT OVERVIEW",
+      "title": "Investigation Summary",
+      "p1": "This investigation project evaluates subsurface soil conditions to support foundation design and construction safety requirements for the proposed high-rise tower development on Al Reem Island, Abu Dhabi.",
+      "p2": "The scope of work includes rotary borehole drilling to depths of 30 meters, Standard Penetration Testing (SPT) at regular intervals, collection of disturbed and undisturbed soil samples, and groundwater level measurements. Laboratory testing encompasses soil classification, particle size analysis, Atterberg limits, moisture content determination, and chemical analysis including sulphate, chloride, and pH testing of soil and groundwater samples.",
+      "p3": "All field and laboratory operations are conducted in accordance with BS, ASTM, and relevant international standards. The final geotechnical investigation report will provide engineering recommendations for foundation design, bearing capacity assessment, and settlement analysis to ensure safe and reliable construction outcomes."
+    },
+    "fields": {
+      "project_name": {
+        "label": "PROJECT NAME",
+        "value": "Geotechnical Investigation — Al Reem Island Tower"
+      },
+      "client_name": {
+        "label": "CLIENT NAME",
+        "value": "Aldar Properties PJSC"
+      },
+      "location": {
+        "label": "LOCATION",
+        "value": "Al Reem Island, Abu Dhabi, UAE"
+      },
+      "borehole_depth": {
+        "label": "BOREHOLE DEPTH",
+        "value": "30m (6 Boreholes)"
+      },
+      "num_samples": {
+        "label": "NUMBER OF SAMPLES",
+        "value": "48 Disturbed + 18 Undisturbed"
+      },
+      "project_engineer": {
+        "label": "PROJECT ENGINEER",
+        "value": "Eng. Ahmed Al Mansoori"
+      }
+    }
+  },
+  "project_updates": {
+    "label": "PROJECT UPDATES",
+    "title": "Client Notes & Timeline",
+    "desc": "Chronological updates on your project activities and milestones.",
+    "milestone_label": "MILESTONE",
+    "updates": {
+      "u1": {
+        "date": "15 March 2026",
+        "message": "Final laboratory testing phase initiated for chemical analysis of groundwater samples."
+      },
+      "u2": {
+        "date": "12 March 2026",
+        "message": "Samples transferred to laboratory for geotechnical and chemical testing."
+      },
+      "u3": {
+        "date": "8 March 2026",
+        "message": "Field investigation completed. All 48 disturbed and 18 undisturbed samples collected successfully."
+      },
+      "u4": {
+        "date": "3 March 2026",
+        "message": "Drilling operations commenced at Borehole BH-1. SPT testing underway."
+      },
+      "u5": {
+        "date": "28 February 2026",
+        "message": "Engineering team mobilized to Al Reem Island site. Equipment setup complete."
+      },
+      "u6": {
+        "date": "22 February 2026",
+        "message": "Project documentation approved. Investigation plan confirmed by client."
+      }
+    }
+  },
+  "gallery_page": {
+    "label": "OUR WORK",
+    "title": "Complete Media Gallery",
+    "desc": "A comprehensive look at our field investigations, laboratory testing, and successful project deliveries.",
+    "loading": "Loading gallery items...",
+    "error_title": "Error loading gallery",
+    "error_desc": "Please try again later.",
+    "no_items": "No media available at the moment.",
+    "no_items_desc": "Check back later for exciting project updates.",
+    "item_count": "Item {{current}} of {{total}}"
+  },
+  "projects_page": {
+    "label": "OUR EXPERTISE",
+    "title": "Engineering Portfolio",
+    "desc": "Trace the journey of our latest engineering projects, from initial field investigations to the final certified reporting. Quality and transparency in every step.",
+    "loading": "Loading Project Data...",
+    "error_title": "Error Loading Projects",
+    "error_desc": "Our servers are currently undergoing maintenance, please try again later.",
+    "no_projects": "No projects available at the moment.",
+    "no_projects_desc": "We are currently updating our portfolio. Please check back soon for exciting project highlights.",
+    "active": "Active",
+    "progress": "Overall Task Progress",
+    "location_fallback": "Abu Dhabi",
+    "milestones": "Project Milestones"
+  },
+  "team_page": {
+    "label": "TEAM MEMBERS",
+    "title": "Our Professionals & Specialists",
+    "desc": "We pride ourselves on having a team of dedicated professionals who are committed to precision and engineering excellence. Meet the experts who make Al Dana possible."
+  },
+  "not_found": {
+    "title": "Welcome to the Not Found Page"
+  },
+  "user_menu": {
+    "logged_out_success": "Logged out successfully",
+    "my_profile": "My Profile",
+    "logout": "Logout",
+    "login": "Login",
+    "create_account": "Create Account"
+  }
+}

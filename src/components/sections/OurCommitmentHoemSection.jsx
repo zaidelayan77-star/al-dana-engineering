@@ -1,24 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FaMicroscope, FaTools, FaTachometerAlt, FaGlobe } from 'react-icons/fa';
 
 export default function OurCommitmentHoemSection() {
+    const { t } = useTranslation();
+    
     const items = [
         {
             icon: <FaMicroscope size={32} />,
-            title: "Advanced Testing Instruments"
+            title: t('our_capabilities.items.instruments')
         },
         {
             icon: <FaTools size={32} />,
-            title: "Modern Drilling Rigs"
+            title: t('our_capabilities.items.rigs')
         },
         {
             icon: <FaTachometerAlt size={32} />,
-            title: "Fully Calibrated Equipment"
+            title: t('our_capabilities.items.calibrated')
         },
         {
             icon: <FaGlobe size={32} />,
-            title: "International Compliance"
+            title: t('our_capabilities.items.compliance')
         }
     ];
 
@@ -37,7 +40,7 @@ export default function OurCommitmentHoemSection() {
                     >
                         <div className="h-0.5 w-12 bg-[#E9B10C]"></div>
                         <span className="text-gray-400 font-bold text-xs tracking-[0.2em] uppercase">
-                            OUR CAPABILITIES
+                            {t('our_capabilities.label')}
                         </span>
                         <div className="h-0.5 w-12 bg-[#E9B10C]"></div>
                     </motion.div>
@@ -49,7 +52,7 @@ export default function OurCommitmentHoemSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-3xl md:text-4xl font-bold text-white mb-6 font-primary"
                     >
-                        Equipment & Technology
+                        {t('our_capabilities.title')}
                     </motion.h2>
 
                     <motion.p
@@ -59,7 +62,7 @@ export default function OurCommitmentHoemSection() {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="max-w-2xl mx-auto text-gray-400 text-sm md:text-base leading-relaxed"
                     >
-                        Our laboratory is equipped with advanced testing instruments, modern drilling rigs, and fully calibrated equipment to ensure precision, consistency, and international compliance.
+                        {t('our_capabilities.description')}
                     </motion.p>
                 </div>
 
@@ -89,4 +92,4 @@ export default function OurCommitmentHoemSection() {
             </div>
         </section>
     );
-}
+}

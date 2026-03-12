@@ -1,32 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function OurJourneySection() {
+    const { t } = useTranslation();
+
     const milestones = [
         {
             year: "1996",
-            title: "Company Founded",
-            description: "Establishment of Al Dana as a specialized geotechnical engineering laboratory."
+            title: t('journey.milestones.1996.title'),
+            description: t('journey.milestones.1996.desc')
         },
         {
             year: "2003",
-            title: "Geotechnical Expansion",
-            description: "Expanded field and laboratory geotechnical services to support major developments."
+            title: t('journey.milestones.2003.title'),
+            description: t('journey.milestones.2003.desc')
         },
         {
             year: "2013",
-            title: "Accreditation Achievement",
-            description: "Achieved ISO/IEC 17025 accreditation for testing and calibration."
+            title: t('journey.milestones.2013.title'),
+            description: t('journey.milestones.2013.desc')
         },
         {
             year: "2017",
-            title: "Infrastructure Projects",
-            description: "Supported major UAE infrastructure and energy sector projects."
+            title: t('journey.milestones.2017.title'),
+            description: t('journey.milestones.2017.desc')
         },
         {
-            year: "Today",
-            title: "Growth & Innovation",
-            description: "Continuous investment in technology, talent, and service capabilities."
+            year: t('journey.today'),
+            title: t('journey.milestones.today.title'),
+            description: t('journey.milestones.today.desc')
         }
     ];
 
@@ -42,10 +45,10 @@ export default function OurJourneySection() {
                     className="text-center mb-20"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        OUR JOURNEY
+                        {t('journey.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-white">
-                        History & Milestones
+                        {t('journey.title')}
                     </h2>
                 </motion.div>
 

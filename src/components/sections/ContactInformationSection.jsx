@@ -1,31 +1,34 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FiMapPin, FiPhone, FiMail, FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 export default function ContactInformationSection() {
+    const { t } = useTranslation();
+
     const contactInfo = [
         {
             icon: <FiMapPin className="w-6 h-6 text-[#E9B10C]" />,
-            title: "LOCATION",
-            details: "Abu Dhabi – Mussafah, United Arab Emirates",
+            title: t('contact_info.items.location.title'),
+            details: t('contact_info.items.location.details'),
             action: null
         },
         {
             icon: <FiPhone className="w-6 h-6 text-[#E9B10C]" />,
-            title: "PHONE",
-            details: "(02)-5186-558",
+            title: t('contact_info.items.phone.title'),
+            details: t('contact_info.items.phone.details'),
             action: "tel:+971501119108"
         },
         {
             icon: <FiMail className="w-6 h-6 text-[#E9B10C]" />,
-            title: "EMAIL",
-            details: "Info@aldanalab.ae",
+            title: t('contact_info.items.email.title'),
+            details: t('contact_info.items.email.details'),
             action: "mailto:Info@aldanalab.ae"
         },
         {
             icon: <FiClock className="w-6 h-6 text-[#E9B10C]" />,
-            title: "WORKING HOURS",
-            details: "Sunday – Thursday | 8:00 AM – 5:00 PM",
+            title: t('contact_info.items.hours.title'),
+            details: t('contact_info.items.hours.details'),
             action: null
         }
     ];
@@ -61,10 +64,10 @@ export default function ContactInformationSection() {
                     className="text-center mb-16"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        CONTACT INFORMATION
+                        {t('contact_info.label')}
                     </h3>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                        Get In Touch
+                        {t('contact_info.title')}
                     </h2>
                 </motion.div>
 
@@ -105,4 +108,4 @@ export default function ContactInformationSection() {
             </div>
         </section>
     );
-}
+}

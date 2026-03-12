@@ -74,7 +74,7 @@ export default function Support() {
                         <h3 className="text-xl font-bold text-gray-900 mb-2">Phone Support</h3>
                         <p className="text-gray-500 mb-6">Available 9:00 AM - 6:00 PM</p>
                         <a href="tel:+971501234567" className="text-green-500 font-medium hover:underline">
-                            (02)-5186-558
+                            025585186
                         </a>
                     </motion.div>
                 </div>

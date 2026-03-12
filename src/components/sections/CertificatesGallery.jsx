@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiDownload, FiMaximize2, FiX, FiLoader, FiAward } from 'react-icons/fi';
 import { useGetCertificates } from '../../hooks/useCertificates';
 
 export default function CertificatesGallery() {
+    const { t } = useTranslation();
     const { data: certificates, isLoading } = useGetCertificates();
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -27,10 +29,10 @@ export default function CertificatesGallery() {
                         transition={{ duration: 0.6 }}
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                            CERTIFICATES
+                            {t('certificates.label')}
                         </h3>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-primary">
-                            Official Documentation
+                            {t('certificates.title')}
                         </h2>
                     </motion.div>
                 </div>
@@ -42,7 +44,7 @@ export default function CertificatesGallery() {
                 ) : items.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-16 border-2 border-dashed border-gray-200 rounded-2xl bg-white text-gray-500">
                         <FiAward className="w-12 h-12 text-gray-300 mb-3" />
-                        <p>Certifications will be displayed here soon.</p>
+                        <p>{t('certificates.coming_soon')}</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -72,7 +74,7 @@ export default function CertificatesGallery() {
                                         <button
                                             onClick={() => setSelectedImage(cert)}
                                             className="p-3 bg-white rounded-full text-gray-900 hover:text-[#E9B10C] transition-colors shadow-lg"
-                                            title="View Fullsize"
+                                            title={t('certificates.view_full')}
                                         >
                                             <FiMaximize2 />
                                         </button>
@@ -82,7 +84,7 @@ export default function CertificatesGallery() {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="p-3 bg-[#E9B10C] rounded-full text-white hover:bg-[#c4950a] transition-colors shadow-lg"
-                                                title="Download PDF"
+                                                title={t('certificates.download_pdf')}
                                             >
                                                 <FiDownload />
                                             </a>
@@ -138,7 +140,7 @@ export default function CertificatesGallery() {
                                     className="inline-flex items-center space-x-2 px-6 py-2 bg-[#E9B10C] text-black rounded-lg font-bold text-sm hover:bg-[#c4950a] transition-colors mt-2"
                                 >
                                     <FiDownload />
-                                    <span>Download PDF</span>
+                                    <span>{t('certificates.download_pdf')}</span>
                                 </a>
                             )}
                         </div>

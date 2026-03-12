@@ -1,34 +1,37 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FiAward, FiClock, FiUsers, FiCheckCircle } from 'react-icons/fi';
 import { FaFlask } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 export default function OurAdvantagesSection() {
+    const { t } = useTranslation();
+
     const advantages = [
         {
-            icon: <FiAward className="w-8 h-8 text-[#E9B10C]" />,
-            title: "25+ Years Engineering Experience",
-            description: "Trusted expertise since 1996 across the UAE and beyond."
+            icon: <FiAward />,
+            title: t('our_advantages.items.exp.title'),
+            description: t('our_advantages.items.exp.desc')
         },
         {
-            icon: <FaFlask className="w-8 h-8 text-[#E9B10C]" />,
-            title: "ISO/IEC 17025 Accredited Laboratory",
-            description: "Internationally recognized testing and calibration standards."
+            icon: <FaFlask />,
+            title: t('our_advantages.items.iso.title'),
+            description: t('our_advantages.items.iso.desc')
         },
         {
-            icon: <FiClock className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Fast & Reliable Reporting",
-            description: "Timely delivery of certified reports for your project deadlines."
+            icon: <FiClock />,
+            title: t('our_advantages.items.fast.title'),
+            description: t('our_advantages.items.fast.desc')
         },
         {
-            icon: <FiUsers className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Experienced Technical Team",
-            description: "30+ qualified engineers and technicians dedicated to quality."
+            icon: <FiUsers />,
+            title: t('our_advantages.items.team.title'),
+            description: t('our_advantages.items.team.desc')
         },
         {
-            icon: <FiCheckCircle className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Trusted by Contractors & Consultants",
-            description: "Preferred partner for major government and private sector projects."
+            icon: <FiCheckCircle />,
+            title: t('our_advantages.items.trust.title'),
+            description: t('our_advantages.items.trust.desc')
         }
     ];
 
@@ -63,10 +66,10 @@ export default function OurAdvantagesSection() {
                     className="text-center mb-16"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        OUR ADVANTAGES
+                        {t('our_advantages.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 max-w-4xl mx-auto">
-                        Why Work With Al Dana Engineering Laboratories?
+                        {t('our_advantages.title')}
                     </h2>
                 </motion.div>
 
@@ -90,7 +93,7 @@ export default function OurAdvantagesSection() {
                                 }`}
                         >
                             <div className="bg-[#FFF8E1] p-4 rounded-xl mb-6 flex items-center justify-center">
-                                {item.icon}
+                                {React.cloneElement(item.icon, { className: "w-8 h-8 text-[#E9B10C]" })}
                             </div>
 
                             <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
@@ -106,4 +109,4 @@ export default function OurAdvantagesSection() {
             </div>
         </section>
     );
-}
+}

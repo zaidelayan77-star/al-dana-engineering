@@ -1,29 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiAward, FiShield, FiSettings } from 'react-icons/fi';
 import { FaBuilding } from 'react-icons/fa';
 
 export default function CertificationsSection() {
+    const { t } = useTranslation();
+
     const certifications = [
         {
-            icon: <FiAward className="w-8 h-8 text-[#E9B10C]" />,
-            title: "ISO/IEC 17025:2017",
-            description: "Accredited for testing and calibration laboratories, ensuring competence, impartiality, and consistent operation."
+            icon: <FiAward />,
+            title: t('quality_assurance.items.iso.title'),
+            description: t('quality_assurance.items.iso.desc')
         },
         {
-            icon: <FiShield className="w-8 h-8 text-[#E9B10C]" />,
-            title: "ENAS Accredited",
-            description: "Emirates National Accreditation System certified laboratory with recognized testing capabilities."
+            icon: <FiShield />,
+            title: t('quality_assurance.items.enas.title'),
+            description: t('quality_assurance.items.enas.desc')
         },
         {
-            icon: <FaBuilding className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Government Approved",
-            description: "Pre-qualified and approved by UAE government entities for engineering and testing services."
+            icon: <FaBuilding />,
+            title: t('quality_assurance.items.government.title'),
+            description: t('quality_assurance.items.government.desc')
         },
         {
-            icon: <FiSettings className="w-8 h-8 text-[#E9B10C]" />,
-            title: "Calibrated Equipment",
-            description: "Continuous quality assurance with regularly calibrated instruments meeting international compliance."
+            icon: <FiSettings />,
+            title: t('quality_assurance.items.calibrated.title'),
+            description: t('quality_assurance.items.calibrated.desc')
         }
     ];
 
@@ -58,10 +61,10 @@ export default function CertificationsSection() {
                     className="text-center mb-16"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        CERTIFICATIONS
+                        {t('quality_assurance.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-                        Quality & Accreditation
+                        {t('quality_assurance.title')}
                     </h2>
                 </motion.div>
 
@@ -77,7 +80,7 @@ export default function CertificationsSection() {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="bg-white p-8 rounded-2xl border border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group"
+                            className="bg-white p-8 rounded-2xl border border-gray-100 shadow-[0_2px_15px_-3_rgba(0,0,0,0.07),0_10px_20px_-2_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group"
                         >
                             <div className="w-16 h-16 bg-[#FFF8E1] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#E9B10C] transition-colors duration-300">
                                 {React.cloneElement(item.icon, { className: "w-8 h-8 text-[#E9B10C] group-hover:text-white transition-colors duration-300" })}
@@ -96,4 +99,4 @@ export default function CertificationsSection() {
             </div>
         </section>
     );
-}
+}

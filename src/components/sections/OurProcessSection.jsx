@@ -1,39 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiMapPin, FiSearch, FiFileText } from 'react-icons/fi';
 import { FaFlask, FaChartBar } from 'react-icons/fa';
 
 export default function OurProcessSection() {
+    const { t } = useTranslation();
+
     const steps = [
         {
             icon: <FiMapPin className="w-6 h-6 text-[#E9B10C]" />,
             number: "01",
-            title: "Site Work",
-            description: "Evaluate project scope and requirements"
+            title: t('our_process.steps.s1.title'),
+            description: t('our_process.steps.s1.desc')
         },
         {
             icon: <FiSearch className="w-6 h-6 text-[#E9B10C]" />,
             number: "02",
-            title: "Site Assessment ",
-            description: "On-site drilling, sampling and data collection"
+            title: t('our_process.steps.s2.title'),
+            description: t('our_process.steps.s2.desc')
         },
         {
             icon: <FaFlask className="w-6 h-6 text-[#E9B10C]" />,
             number: "03",
-            title: "Laboratory Testing",
-            description: "Comprehensive testing in our accredited lab"
+            title: t('our_process.steps.s3.title'),
+            description: t('our_process.steps.s3.desc')
         },
         {
             icon: <FaChartBar className="w-6 h-6 text-[#E9B10C]" />,
             number: "04",
-            title: "Engineering Analysis",
-            description: "Expert interpretation of test results"
+            title: t('our_process.steps.s4.title'),
+            description: t('our_process.steps.s4.desc')
         },
         {
             icon: <FiFileText className="w-6 h-6 text-[#E9B10C]" />,
             number: "05",
-            title: "Final Report",
-            description: "Detailed reports with actionable insights"
+            title: t('our_process.steps.s5.title'),
+            description: t('our_process.steps.s5.desc')
         }
     ];
 
@@ -49,10 +52,10 @@ export default function OurProcessSection() {
                     className="text-center mb-20"
                 >
                     <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                        OUR PROCESS
+                        {t('our_process.label')}
                     </h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                        How We Deliver Our Services
+                        {t('our_process.title')}
                     </h2>
                     <div className="w-16 h-1 bg-[#E9B10C] mx-auto rounded-full"></div>
                 </motion.div>
@@ -94,4 +97,4 @@ export default function OurProcessSection() {
             </div>
         </section>
     );
-}
+}

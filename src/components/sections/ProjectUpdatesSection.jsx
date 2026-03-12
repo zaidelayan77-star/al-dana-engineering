@@ -1,37 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FiClock, FiMessageSquare } from 'react-icons/fi';
 
 export default function ProjectUpdatesSection() {
+    const { t } = useTranslation();
+
     const updates = [
         {
-            date: "15 March 2026",
-            message: "Final laboratory testing phase initiated for chemical analysis of groundwater samples.",
+            date: t('project_updates.updates.u1.date'),
+            message: t('project_updates.updates.u1.message'),
             isMilestone: false
         },
         {
-            date: "12 March 2026",
-            message: "Samples transferred to laboratory for geotechnical and chemical testing.",
+            date: t('project_updates.updates.u2.date'),
+            message: t('project_updates.updates.u2.message'),
             isMilestone: true
         },
         {
-            date: "8 March 2026",
-            message: "Field investigation completed. All 48 disturbed and 18 undisturbed samples collected successfully.",
+            date: t('project_updates.updates.u3.date'),
+            message: t('project_updates.updates.u3.message'),
             isMilestone: true
         },
         {
-            date: "3 March 2026",
-            message: "Drilling operations commenced at Borehole BH-1. SPT testing underway.",
+            date: t('project_updates.updates.u4.date'),
+            message: t('project_updates.updates.u4.message'),
             isMilestone: false
         },
         {
-            date: "28 February 2026",
-            message: "Engineering team mobilized to Al Reem Island site. Equipment setup complete.",
+            date: t('project_updates.updates.u5.date'),
+            message: t('project_updates.updates.u5.message'),
             isMilestone: false
         },
         {
-            date: "22 February 2026",
-            message: "Project documentation approved. Investigation plan confirmed by client.",
+            date: t('project_updates.updates.u6.date'),
+            message: t('project_updates.updates.u6.message'),
             isMilestone: true
         }
     ];
@@ -48,13 +51,13 @@ export default function ProjectUpdatesSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <h3 className="text-[#E9B10C] font-bold text-sm tracking-[0.2em] uppercase mb-3">
-                            PROJECT UPDATES
+                            {t('project_updates.label')}
                         </h3>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-primary">
-                            Client Notes & Timeline
+                            {t('project_updates.title')}
                         </h2>
                         <p className="max-w-2xl mx-auto text-gray-500 text-lg leading-relaxed">
-                            Chronological updates on your project activities and milestones.
+                            {t('project_updates.desc')}
                         </p>
                     </motion.div>
                 </div>
@@ -86,7 +89,7 @@ export default function ProjectUpdatesSection() {
 
                                         {update.isMilestone && (
                                             <span className="ml-4 px-2 py-0.5 bg-[#FFF9E5] text-[#E9B10C] text-[10px] font-bold uppercase tracking-wider rounded">
-                                                MILESTONE
+                                                {t('project_updates.milestone_label')}
                                             </span>
                                         )}
                                     </div>
@@ -102,4 +105,4 @@ export default function ProjectUpdatesSection() {
             </div>
         </section>
     );
-}
+}
