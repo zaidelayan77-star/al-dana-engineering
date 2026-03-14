@@ -176,7 +176,7 @@
       "established": "ESTABLISHED IN",
       "projects": "PROJECTS COMPLETED",
       "accredited": "ISO/IEC ACCREDITED",
-      "employees": "EMPLOYEES"
+      "employees": "YEARS OF EXPERIENCE"
     }
   },
   "quality_assurance": {
@@ -362,7 +362,7 @@
     "items": {
       "location": {
         "title": "LOCATION",
-        "details": "AL DANA ENGG LABORATORIES ,                               42 Ad Diman 6 St - Musaffah - M26 - Abu Dhabi"
+        "details": "AL DANA ENGG LABORATORIES , 42 Ad Diman 6 St - Musaffah - M26 - Abu Dhabi"
       },
       "phone": {
         "title": "PHONE",

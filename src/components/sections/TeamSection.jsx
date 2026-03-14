@@ -18,7 +18,29 @@ export default function TeamSection({ limit = 4, showHeader = true, isFullPage =
 
     if (isLoading) return null;
 
-    const displayMembers = isFullPage ? members : members?.slice(0, limit);
+    const sortedMembers = React.useMemo(() => {
+        if (!members) return [];
+        
+        const priorityOrder = [
+            "Eng. Abdulrahman Abdullah",
+            "Dr. Abdelghani Yaghi",
+            "Eng. Laith Al Khalaf",
+            "Ahmed Eldabe",
+            "Eng. Louis Mamary"
+        ];
+
+        return [...members].sort((a, b) => {
+            const indexA = priorityOrder.indexOf(a.name);
+            const indexB = priorityOrder.indexOf(b.name);
+
+            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+            if (indexA !== -1) return -1;
+            if (indexB !== -1) return 1;
+            return 0;
+        });
+    }, [members]);
+
+    const displayMembers = isFullPage ? sortedMembers : sortedMembers.slice(0, limit);
 
     if (!displayMembers || displayMembers.length === 0) return null;
 

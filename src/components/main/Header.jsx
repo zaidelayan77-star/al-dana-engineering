@@ -77,7 +77,7 @@ const Header = () => {
 
                         <div className={`flex items-center gap-5 ${baseTextColor}`}>
                             <a
-                                href="https://www.linkedin.com/"
+                                href="https://www.linkedin.com/company/al-dana-engineering-laboratories1/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 px-4 py-1.5 bg-[#0077b5] text-white rounded-full hover:bg-[#005a8a] transition-all text-sm font-bold shadow-md shadow-blue-500/10"
