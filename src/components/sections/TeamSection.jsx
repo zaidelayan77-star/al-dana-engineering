@@ -16,8 +16,6 @@ export default function TeamSection({ limit = 4, showHeader = true, isFullPage =
         return `https://al-danaengineering.com/api/storage/app/public/${cleanPath}`;
     };
 
-    if (isLoading) return null;
-
     const sortedMembers = React.useMemo(() => {
         if (!members) return [];
         
@@ -39,6 +37,8 @@ export default function TeamSection({ limit = 4, showHeader = true, isFullPage =
             return 0;
         });
     }, [members]);
+
+    if (isLoading) return null;
 
     const displayMembers = isFullPage ? sortedMembers : sortedMembers.slice(0, limit);
 
