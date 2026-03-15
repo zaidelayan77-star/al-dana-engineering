@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import aboutImg from '../../assets/images/new-images/مراجعة المخططات.png';
+import aboutImg from '../../assets/images/new-images/hf_20260313_082321_c80c98a1-6ed3-4253-ab68-0c7975d82175.jpeg';
 
 export default function WhoWeAreHome() {
     const { t } = useTranslation();

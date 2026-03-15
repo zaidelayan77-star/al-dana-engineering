@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import ourPeopleImg from '../../assets/images/new-images/العامل مع التابلت.png';
+import ourPeopleImg from '../../assets/images/new-images/hf_20260311_100945_87c3e604-9090-411f-b04e-548337ca513b.jpeg';
 
 export default function OurPeople() {
     const { t } = useTranslation();

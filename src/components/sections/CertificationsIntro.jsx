@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiCheckCircle } from 'react-icons/fi';
-import img1 from '../../assets/images/new-images/مختبر فحص التربة 2.png';
+import img1 from '../../assets/images/new-images/hf_20260311_102333_9b079bc0-8fdb-4317-b018-a8d7b5435d56.jpeg';
 
 export default function CertificationsIntro() {
     const { t } = useTranslation();

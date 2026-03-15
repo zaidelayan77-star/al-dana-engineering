@@ -6,7 +6,7 @@ import OurLocationSection from '../sections/OurLocationSection';
 import ContactUsForm from '../sections/ContactUsForm';
 import OurAdvantagesSection from '../sections/OurAdvantagesSection';
 import ContactOurTeamSection from '../sections/ContactOurTeamSection';
-import coverImg from '../../assets/images/1 (3).jpg';
+import coverImg from '../../assets/images/new-images/hf_20260314_235633_53c49a02-2822-4480-a3be-56be9363020c.png';
 
 const ContactUs = () => {
     const { t } = useTranslation();
@@ -23,7 +23,7 @@ const ContactUs = () => {
             <ContactUsForm />
             <OurLocationSection />
             <OurAdvantagesSection />
-            <ContactOurTeamSection/>
+            <ContactOurTeamSection />
         </div>
     );
 };

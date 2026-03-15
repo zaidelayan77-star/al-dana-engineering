@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import whoWeAreImg from '../../assets/images/new-images/مختبر فحص التربة 1.png';
+import whoWeAreImg from '../../assets/images/new-images/hf_20260311_102931_c65de2e8-f591-4f26-911f-6bc706441407.jpeg';
 
 export default function WhoWeAreSection() {
     const { t } = useTranslation();

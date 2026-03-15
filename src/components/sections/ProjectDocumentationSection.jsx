@@ -6,7 +6,7 @@ import { FiX, FiChevronLeft, FiChevronRight, FiMaximize2 } from 'react-icons/fi'
 import img1 from '../../assets/images/new-images/شاحنة الحفر.png';
 import img2 from '../../assets/images/new-images/فريق الحفر.png';
 import img3 from '../../assets/images/new-images/عامل يفحص المواد (1).png';
-import img4 from '../../assets/images/new-images/مختبر فحص التربة 3.png';
+import img4 from '../../assets/images/new-images/hf_20260311_101625_53c3f7e5-d981-42a4-9889-dc51ecd4e8eb.jpeg';
 
 export default function ProjectDocumentationSection() {
     const { t } = useTranslation();
