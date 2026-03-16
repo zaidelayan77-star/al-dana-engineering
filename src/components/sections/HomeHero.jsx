@@ -8,7 +8,6 @@ export default function HomeHero() {
     const { t } = useTranslation();
     return (
         <section className="relative h-screen w-full overflow-hidden">
-            {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <div
                     className="w-full h-full bg-cover bg-no-repeat bg-[position:50%_38%]"
@@ -18,7 +17,6 @@ export default function HomeHero() {
                 <div className="absolute inset-0 bg-[#3F2E00]/30 mix-blend-overlay"></div> {/* Adding a warm/sepia tone */}
             </div>
 
-            {/* Content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-16">
 
                 <motion.div
@@ -26,7 +24,7 @@ export default function HomeHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <h3 className="text-[#E9B10C] font-bold text-xs md:text-sm tracking-[0.3em] uppercase mb-6">
+                    <h3 className="text-[#E9B10C] font-bold text-[20px] tracking-[0.3em] uppercase mb-6">
                         {t('home_hero.company_name')}
                     </h3>
                 </motion.div>
@@ -74,7 +72,6 @@ export default function HomeHero() {
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

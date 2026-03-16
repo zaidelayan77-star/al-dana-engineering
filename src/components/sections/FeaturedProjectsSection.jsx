@@ -3,11 +3,19 @@ import { motion } from 'framer-motion';
 import { FiFolder, FiMapPin, FiLoader, FiChevronRight, FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useGetProjects } from '../../hooks/useProjects';
+import { useGetUserProjects } from '../../hooks/useProjects';
+import LoginRequired from '../common/LoginRequired';
 
 export default function FeaturedProjectsSection() {
     const { t } = useTranslation();
-    const { data: projects, isLoading } = useGetProjects();
+    const token = localStorage.getItem('auth_token');
+    
+    // Get user id from localStorage
+    const storedUserStr = localStorage.getItem('user');
+    const storedUser = storedUserStr ? JSON.parse(storedUserStr) : null;
+    const userId = storedUser?.id;
+
+    const { data: projects, isLoading } = useGetUserProjects(userId);
 
     // Show max 4 featured projects
     const featured = (projects || []).slice(0, 4);
@@ -31,17 +39,20 @@ export default function FeaturedProjectsSection() {
                             {t('featured_projects.title')}
                         </h2>
                     </div>
-                    <Link
-                        to="/projects"
-                        className="flex items-center space-x-2 text-sm font-bold text-[#E9B10C] hover:text-[#c4950a] transition-colors group"
-                    >
-                        <span>{t('featured_projects.view_all')}</span>
-                        <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    {token && (
+                        <Link
+                            to="/projects"
+                            className="flex items-center space-x-2 text-sm font-bold text-[#E9B10C] hover:text-[#c4950a] transition-colors group"
+                        >
+                            <span>{t('featured_projects.view_all')}</span>
+                            <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    )}
                 </motion.div>
 
-                {/* Loading State */}
-                {isLoading ? (
+                {!token ? (
+                    <LoginRequired />
+                ) : isLoading ? (
                     <div className="flex items-center justify-center h-64 bg-white rounded-2xl border border-gray-100 shadow-sm">
                         <FiLoader className="w-8 h-8 text-[#E9B10C] animate-spin" />
                     </div>
@@ -117,7 +128,7 @@ export default function FeaturedProjectsSection() {
                 )}
 
                 {/* View All Link (Mobile) */}
-                {!isLoading && featured.length > 0 && (
+                {token && !isLoading && featured.length > 0 && (
                     <div className="flex justify-center mt-10 md:hidden">
                         <Link
                             to="/projects"

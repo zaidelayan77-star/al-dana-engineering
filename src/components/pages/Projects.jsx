@@ -3,13 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiFolder, FiMapPin, FiClock, FiActivity, FiLoader, FiChevronRight, FiCheckCircle } from 'react-icons/fi';
 import HeroPages from '../shared/HeroPages';
-import coverImg from '../../assets/images/1 (6).jpg';
+import coverImg from '../../assets/images/new-images/hf_20260313_082321_c80c98a1-6ed3-4253-ab68-0c7975d82175.jpeg';
 import ContactOurTeamSection from '../sections/ContactOurTeamSection';
-import { useGetProjects } from '../../hooks/useProjects';
+import { useGetUserProjects } from '../../hooks/useProjects';
+import LoginRequired from '../common/LoginRequired';
 
 export default function Projects() {
     const { t } = useTranslation();
-    const { data: projects, isLoading, error } = useGetProjects();
+    const token = localStorage.getItem('auth_token');
+    
+    // Get user id from localStorage
+    const storedUserStr = localStorage.getItem('user');
+    const storedUser = storedUserStr ? JSON.parse(storedUserStr) : null;
+    const userId = storedUser?.id;
+
+    const { data: projects, isLoading, error } = useGetUserProjects(userId);
     const [selectedProjectId, setSelectedProjectId] = useState(null);
 
     // Filter projects that are returned from API
@@ -55,7 +63,9 @@ export default function Projects() {
                     </div>
 
                     {/* Content Section */}
-                    {isLoading ? (
+                    {!token ? (
+                        <LoginRequired />
+                    ) : isLoading ? (
                         <div className="flex flex-col items-center justify-center py-24 mb-10 bg-white rounded-3xl shadow-sm border border-gray-100 max-w-4xl mx-auto">
                             <FiLoader className="w-12 h-12 text-[#E9B10C] animate-spin mb-4" />
                             <p className="text-gray-500 font-medium text-lg">{t('projects_page.loading')}</p>

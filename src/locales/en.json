@@ -70,7 +70,7 @@
     "title_part2": "Engineering Laboratories",
     "p1": "Al Dana Engineering Laboratories is a specialized engineering laboratory established in 1996 in Abu Dhabi, United Arab Emirates.",
     "p2": "We provide professional geotechnical investigations, soil testing, and construction material testing services to support infrastructure, building, and industrial projects.",
-    "p3": "With over 25 years of experience, we deliver accurate data and certified reports that enable safe, reliable, and informed engineering decisions.",
+    "p3": "With over 30 years of experience, we deliver accurate data and certified reports that enable safe, reliable, and informed engineering decisions.",
     "image_alt": "Construction Site with Hard Hat"
   },
   "our_services": {
@@ -88,7 +88,6 @@
         "points": [
           "Rotary drilling",
           "Standard Penetration Test (SPT)",
-          "Rock Quality Designation (RQD)",
           "Groundwater level monitoring",
           "Geotechnical reporting"
         ]
@@ -216,7 +215,7 @@
     "description": "We are committed to delivering high-quality engineering solutions with integrity, reliability, and professionalism.",
     "useful_links": "Useful Links",
     "contact_us": "Contact Us",
-    "address": "AL DANA ENGG LABORATORIES , 42 Ad Diman 6 St - Mussafah 33 – Abu Dhabi, UAE",
+    "address": "Mussafah 33 – Abu Dhabi, UAE",
     "phone": "Phone",
     "email": "Email",
     "copyright": "© Copyright 2026 – Al Dana Engineering Laboratories"
@@ -339,7 +338,7 @@
     },
     "why_us": {
       "title": "Why Choose Al Dana?",
-      "desc": "With over 25 years of expertise in geotechnical engineering and soil testing, we deliver accurate, certified results that enable safe and informed engineering decisions for projects across the UAE and the region.",
+      "desc": "With over 30 years of expertise in geotechnical engineering and soil testing, we deliver accurate, certified results that enable safe and informed engineering decisions for projects across the UAE and the region.",
       "features": {
         "iso": {
           "title": "ISO/IEC 17025 Accredited",
@@ -362,7 +361,7 @@
     "items": {
       "location": {
         "title": "LOCATION",
-        "details": "AL DANA ENGG LABORATORIES , 42 Ad Diman 6 St - Mussafah 33 – Abu Dhabi, UAE"
+        "details": "Mussafah 33 – Abu Dhabi, UAE"
       },
       "phone": {
         "title": "PHONE",
@@ -374,7 +373,7 @@
       },
       "hours": {
         "title": "WORKING HOURS",
-        "details": "Sunday – Thursday | 8:00 AM – 4:00 PM"
+        "details": "Sunday – Friday | 8:00 AM – 4:00 PM"
       }
     }
   },
@@ -686,5 +685,22 @@
     "logout": "Logout",
     "login": "Login",
     "create_account": "Create Account"
+  },
+  "user_panel": {
+    "title_part1": "User",
+    "title_part2": "Panel",
+    "my_profile": "My Profile",
+    "my_projects": "My Projects",
+    "security": "Security",
+    "support": "Support",
+    "notifications": "Notifications",
+    "sign_out": "Sign Out",
+    "back_to_website": "Back to Website"
+  },
+  "auth_required": {
+    "title": "Access Restricted",
+    "description": "You need to login or create account to show your projects",
+    "login": "Login",
+    "register": "Create Account"
   }
 }

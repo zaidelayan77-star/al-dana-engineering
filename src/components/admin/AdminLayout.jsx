@@ -1,17 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { FiUser, FiBriefcase, FiLock, FiBell, FiHelpCircle, FiLogOut } from 'react-icons/fi';
+import { FiUser, FiBriefcase, FiLock, FiBell, FiHelpCircle, FiLogOut, FiGlobe } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 export default function AdminLayout({ children }) {
+    const { t } = useTranslation();
     const location = useLocation();
 
     const menuItems = [
-        { path: '/admin/profile', icon: <FiUser />, label: 'My Profile' },
-        { path: '/admin/projects', icon: <FiBriefcase />, label: 'My Projects' },
-        { path: '/admin/security', icon: <FiLock />, label: 'Security' },
-        // { path: '/admin/notifications', icon: <FiBell />, label: 'Notifications' },
-        { path: '/admin/support', icon: <FiHelpCircle />, label: 'Support' },
+        { path: '/admin/profile', icon: <FiUser />, label: t('user_panel.my_profile') },
+        { path: '/admin/projects', icon: <FiBriefcase />, label: t('user_panel.my_projects') },
+        { path: '/admin/security', icon: <FiLock />, label: t('user_panel.security') },
+        { path: '/admin/support', icon: <FiHelpCircle />, label: t('user_panel.support') },
     ];
 
     return (
@@ -24,7 +25,7 @@ export default function AdminLayout({ children }) {
             >
                 <div className="p-6 border-b border-gray-100">
                     <h2 className="text-2xl font-bold text-gray-900">
-                        <span className="text-[#E9B10C]">User</span>Panel
+                        <span className="text-[#E9B10C]">{t('user_panel.title_part1')}</span> {t('user_panel.title_part2')}
                     </h2>
                 </div>
 
@@ -47,10 +48,17 @@ export default function AdminLayout({ children }) {
                     })}
                 </nav>
 
-                <div className="p-4 border-t border-gray-100">
+                <div className="p-4 border-t border-gray-100 space-y-2">
+                    <Link
+                        to="/"
+                        className="flex items-center space-x-3 px-4 py-3 w-full rounded-lg text-gray-600 hover:bg-gray-50 hover:text-[#E9B10C] transition-colors"
+                    >
+                        <FiGlobe className="text-xl" />
+                        <span className="font-medium">{t('user_panel.back_to_website')}</span>
+                    </Link>
                     <button className="flex items-center space-x-3 px-4 py-3 w-full rounded-lg text-red-500 hover:bg-red-50 transition-colors">
                         <FiLogOut className="text-xl" />
-                        <span className="font-medium">Sign Out</span>
+                        <span className="font-medium">{t('user_panel.sign_out')}</span>
                     </button>
                 </div>
             </motion.aside>
