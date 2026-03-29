@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiEdit2, FiTrash2, FiClock, FiPlus, FiX, FiLoader, FiFolder, FiMapPin, FiSettings, FiImage, FiVideo, FiUploadCloud } from 'react-icons/fi';
 import SuperAdminLayout from './SuperAdminLayout';
+import ImageLightbox from '../../common/ImageLightbox';
+
 import {
     useGetProjects,
     useCreateProject,
@@ -269,6 +271,8 @@ function ProjectWorkflowManager({ projectId, onBack }) {
     const [selectedStageNumber, setSelectedStageNumber] = useState(null);
     const [isEditStageModalOpen, setIsEditStageModalOpen] = useState(false);
     const [isUploadMediaModalOpen, setIsUploadMediaModalOpen] = useState(false);
+    const [lightboxData, setLightboxData] = useState({ isOpen: false, imageSrc: '', altText: '' });
+
 
     const project = data?.project || data;
     const stages = data?.stages || project?.stages || [];
@@ -401,9 +405,15 @@ function ProjectWorkflowManager({ projectId, onBack }) {
                                                                         <img
                                                                             src={getMediaUrl(item.file_path)}
                                                                             alt="Media"
-                                                                            className="w-full h-full object-cover"
+                                                                            className="w-full h-full object-cover cursor-zoom-in"
+                                                                            onClick={() => setLightboxData({
+                                                                                isOpen: true,
+                                                                                imageSrc: getMediaUrl(item.file_path),
+                                                                                altText: `Stage ${stageNum} - ${project.project_name}`
+                                                                            })}
                                                                             onError={(e) => { e.target.style.display = 'none'; }}
                                                                         />
+
                                                                     )}
 
                                                                     {/* Overlay Actions */}
@@ -451,6 +461,13 @@ function ProjectWorkflowManager({ projectId, onBack }) {
                     />
                 )}
             </div>
+
+            <ImageLightbox 
+                isOpen={lightboxData.isOpen}
+                imageSrc={lightboxData.imageSrc}
+                altText={lightboxData.altText}
+                onClose={() => setLightboxData({ ...lightboxData, isOpen: false })}
+            />
         </SuperAdminLayout>
     );
 }

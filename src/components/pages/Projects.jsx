@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiFolder, FiMapPin, FiClock, FiActivity, FiLoader, FiChevronRight, FiCheckCircle } from 'react-icons/fi';
 import HeroPages from '../shared/HeroPages';
-import coverImg from '../../assets/images/new-images/hf_20260313_082321_c80c98a1-6ed3-4253-ab68-0c7975d82175.jpeg';
+import coverImg from '../../assets/images/new-images/hf_20260316_205959_18080c17-7c2f-4418-b245-0d994f169dc9.png';
 import ContactOurTeamSection from '../sections/ContactOurTeamSection';
 import { useGetUserProjects } from '../../hooks/useProjects';
 import LoginRequired from '../common/LoginRequired';
+import ImageLightbox from '../common/ImageLightbox';
+
 
 export default function Projects() {
     const { t } = useTranslation();
@@ -19,6 +21,8 @@ export default function Projects() {
 
     const { data: projects, isLoading, error } = useGetUserProjects(userId);
     const [selectedProjectId, setSelectedProjectId] = useState(null);
+    const [lightboxData, setLightboxData] = useState({ isOpen: false, imageSrc: '', altText: '' });
+
 
     // Filter projects that are returned from API
     const items = projects || [];
@@ -186,7 +190,20 @@ export default function Projects() {
                                                                                     {item.file_type === 'video' ? (
                                                                                         <div className="w-full h-full bg-gray-900 flex items-center justify-center"><FiActivity className="text-white/50 w-4 h-4" /></div>
                                                                                     ) : (
-                                                                                        <img src={getMediaUrl(item.file_path)} alt="Media" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none' }} />
+                                                                                        <img 
+                                                                                            src={getMediaUrl(item.file_path)} 
+                                                                                            alt="Media" 
+                                                                                            className="w-full h-full object-cover group-hover/stage:scale-110 transition-transform duration-500 cursor-zoom-in" 
+                                                                                            onClick={(e) => {
+                                                                                                e.stopPropagation();
+                                                                                                setLightboxData({
+                                                                                                    isOpen: true,
+                                                                                                    imageSrc: getMediaUrl(item.file_path),
+                                                                                                    altText: project.project_name
+                                                                                                });
+                                                                                            }}
+                                                                                            onError={(e) => { e.target.style.display = 'none' }} 
+                                                                                        />
                                                                                     )}
                                                                                 </div>
                                                                             ))}
@@ -215,6 +232,13 @@ export default function Projects() {
 
             {/* Added contact banner at bottom to redirect potential clients to create a project */}
             <ContactOurTeamSection />
+
+            <ImageLightbox 
+                isOpen={lightboxData.isOpen}
+                imageSrc={lightboxData.imageSrc}
+                altText={lightboxData.altText}
+                onClose={() => setLightboxData({ ...lightboxData, isOpen: false })}
+            />
         </div>
     );
 }

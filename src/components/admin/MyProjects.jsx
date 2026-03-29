@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiFolder, FiClock, FiMapPin, FiLoader, FiChevronRight, FiCheckCircle, FiVideo, FiImage, FiArrowLeft, FiCircle } from 'react-icons/fi';
 import AdminLayout from './AdminLayout';
+import ImageLightbox from '../common/ImageLightbox';
+
 import { useGetUserProjects, useGetProject } from '../../hooks/useProjects';
 
 export default function MyProjects() {
@@ -89,6 +91,8 @@ export default function MyProjects() {
 
 function ProjectDetails({ projectId, onBack }) {
     const { data, isLoading, error } = useGetProject(projectId);
+    const [lightboxData, setLightboxData] = useState({ isOpen: false, imageSrc: '', altText: '' });
+
 
     // Assuming the backend returns the project inside `project` and stages inside `stages` based on instructions
     // or everything merged in `data`. We will adapt based on standard structures:
@@ -240,7 +244,15 @@ function ProjectDetails({ projectId, onBack }) {
                                                                         <img
                                                                             src={getMediaUrl(item.file_path)}
                                                                             alt="Media"
-                                                                            className="w-full h-full object-cover"
+                                                                            className="w-full h-full object-cover group-hover/media:scale-110 transition-transform duration-500 cursor-zoom-in"
+                                                                            onClick={(e) => {
+                                                                                e.stopPropagation();
+                                                                                setLightboxData({
+                                                                                    isOpen: true,
+                                                                                    imageSrc: getMediaUrl(item.file_path),
+                                                                                    altText: project.project_name
+                                                                                });
+                                                                            }}
                                                                             onError={(e) => { e.target.style.display = 'none'; }}
                                                                         />
                                                                     )}
@@ -258,6 +270,13 @@ function ProjectDetails({ projectId, onBack }) {
                     </div>
                 )}
             </div>
+
+            <ImageLightbox 
+                isOpen={lightboxData.isOpen}
+                imageSrc={lightboxData.imageSrc}
+                altText={lightboxData.altText}
+                onClose={() => setLightboxData({ ...lightboxData, isOpen: false })}
+            />
         </AdminLayout>
     );
 }

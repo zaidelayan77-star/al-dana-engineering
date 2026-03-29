@@ -32,7 +32,7 @@ export default function OurCommitmentSection() {
             label: t('our_commitment.stats.exp')
         },
         {
-            value: "2,838+",
+            value: "4000+",
             label: t('our_commitment.stats.projects')
         },
         {
@@ -115,4 +115,4 @@ export default function OurCommitmentSection() {
             </div>
         </section>
     );
-}
+}
